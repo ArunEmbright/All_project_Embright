@@ -1,0 +1,109 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0 font-size-18">Profile</h4>
+
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Profile</a></li>
+                    <li class="breadcrumb-item active">Auticare</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+</div>
+      <div class="row">
+        <div class="col-xl-6 offset-xl-3">
+          <!-- <div class="card overflow-hidden">
+            <div class="bg-soft bg-primary">
+              <div class="row">
+                <div class="col-7">
+                  <div class="text-primary p-3">
+                    <h5 class="text-primary">Profile</h5>
+                    <p></p>
+                  </div>
+                </div>
+                <div class="col-5 align-self-end">
+                  <img src="assets/images/profile-img.png" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            <div class="card-body pt-0">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="avatar-md profile-user-wid mb-4">
+                    <img src="assets/images/therapist/avatar-1.jpg" alt="" class="img-thumbnail rounded-circle">
+                  </div>
+                  <h5 class="font-size-15 text-truncate">Pteint </h5>
+                  <p class="text-muted mb-0 text-truncate">Name</p>
+                </div>
+    
+                <div class="col-sm-8">
+                  <div class="pt-4">
+    
+                    
+                    <div class="mt-4">
+                      <a href="javascript: void(0);" class="btn btn-primary btn-sm"> Profile <i
+                          class="mdi mdi-arrow-right ms-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!-- end card -->
+    <div *ngFor="let user of therapist">
+        <img class="rounded-circle" width="150" src= {{user.imagePath}}>
+    </div>
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title mb-4">Personal Information</h4>
+    
+              <!-- <p class="text-muted mb-4">Hi I'm Cynthia Price,has been the industry's standard dummy text To an English
+                person, it will seem like simplified English, as a skeptical Cambridge.</p> -->
+              <div class="table-responsive">
+                <table class="table table-nowrap mb-0">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Therapist Name :</th>
+                      <td *ngFor="let user of therapist">{{user.therapistName}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Experience</th>
+                      <td *ngFor="let user of therapist">{{user.experience}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Specialization</th>
+                      <td *ngFor="let user of therapist">{{user.specialization}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Qualification</th>
+                      <td *ngFor="let user of therapist">{{user.qualification}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Email :</th>
+                      <td *ngFor="let user of therapist">{{user.email}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Location</th>
+                      <td *ngFor="let user of therapist">{{user.location}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+    
+         
+          <!-- end card -->
+        </div>
+    
+       
+      </div>
+      <!-- end row -->
+    </div>
+    

@@ -1,0 +1,20 @@
+// .card{ 
+//     position: relative;
+//     width: 100%;
+//     height: auto;
+   
+// }
+img{
+    padding-bottom: 4rem;
+    height: 30%;
+    width: 30%;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    padding-top:4rem;
+    
+    .mt-2{
+        padding-top:2rem
+    }
+}

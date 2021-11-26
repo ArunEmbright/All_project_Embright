@@ -1,0 +1,74 @@
+.title-header {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    padding: 1%;
+    border-radius: 0px 0px 11px 11px;
+  }
+  
+  .title-pl {
+    padding-left: 10%;
+  }
+  
+  .form-width {
+    width: 600px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .form-align {
+    margin: 5% 25%;
+    display: block;
+  }
+  
+  
+  .title-header h2 {
+    padding-left: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    .title-header {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      padding: 1%;
+      border-radius: 0px 0px 11px 11px;
+    }
+  
+    .form-width {
+      width: 100%;
+      margin: 0 auto;
+      display: block;
+    }
+  
+    .title-header h2 {
+      font-size: 20px;
+      padding-left: 0px;
+    }
+  
+    .title-pl {
+      padding-left: 0%;
+    }
+  
+    .loginlogo {
+      width: 70px;
+    }
+  
+    .form-align {
+      margin: 5% 0%;
+      display: block;
+    }
+  
+    input{
+      width: 100%;
+    }
+  
+    .padleftright{
+      padding: 0px;
+    }
+  
+    .form-title{
+      font-size: 18px;
+    }
+  }
+  

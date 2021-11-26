@@ -1,0 +1,51 @@
+<div class="account-pages my-5 pt-sm-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-center mb-5 text-muted">
+                    
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-6">
+                <div class="card">
+
+                    <div class="card-body">
+
+                        <div class="p-2">
+                            <div class="text-center">
+
+                                <div class="avatar-md mx-auto">
+                                    <div class="avatar-title rounded-circle bg-light">
+                                        <i class="bx bxs-envelope h1 mb-0 text-primary"></i>
+                                    </div>
+                                </div>
+                                <div class="p-2 mt-4">
+
+                                    <h4>Verify your email</h4>
+                                    <p class="mb-5">Please enter the 4 digit </p>
+
+                                        <ng-otp-input (onInputChange)="onOtpChange($event)"  [config]="config"></ng-otp-input>
+
+                                    <div class="mt-4">
+                                        <button type="button" class="btn btn-success w-md" [disabled]="otpCode.length < 4"  (click)="submit()">Confirm</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="mt-5 text-center">
+                    <p>Did't receive a code ? <a href="javascript: void(0);" class="fw-medium text-primary" (click)="resendOtp()"> Resend </a> </p>
+                    <p>© {{year}} Auticare. Crafted with <i
+                            class="mdi mdi-heart text-danger"></i> by Embright</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

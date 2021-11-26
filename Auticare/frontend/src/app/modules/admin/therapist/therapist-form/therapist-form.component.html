@@ -1,0 +1,151 @@
+<div class="container-fluid">
+  <!-- SELECT2 EXAMPLE -->
+  <div class="card card-default">
+    <div class="card-header">
+      <h3 class="card-title font-weight-bold">Therapist Form</h3>
+
+      <div class="card-tools">
+        <a
+          class="btn"
+          (click)="back()"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Back to menu list"
+          ><i class="fas fa-hand-point-left"></i
+        ></a>
+      </div>
+    </div>
+
+    <!-- /.card-header -->
+    <div class="card-body">
+      <form [formGroup]="menuForm" (ngSubmit)="save()">
+        <div class="row col-xl-6">
+          <div class="form-group col-sm-12 col-md-6">
+            <label for=""
+              >Therapist name<label class="red-text">*</label></label
+            >
+            <div class="input-group mb-2">
+              <input
+                type="text"
+                class="form-control"
+                id="therapistName"
+                name="therapistName"
+                formControlName="therapistName"
+                placeholder="Enter Name"
+              />
+            </div>
+          </div>
+          <div class="form-group col-sm-12 col-md-6">
+            <label for="">Email ID <label class="red-text">*</label></label>
+            <div class="input-group mb-2">
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                name="email"
+                formControlName="email"
+                placeholder="Enter email"
+              />
+            </div>
+          </div>
+          <div class="form-group col-sm-12 col-md-6">
+            <label for=""
+              >specialization<label class="red-text">*</label></label
+            >
+            <div class="input-group mb-2">
+              <input
+                type="text"
+                class="form-control"
+                id="specialization"
+                name="specialization"
+                formControlName="specialization"
+                placeholder="Enter specialization"
+              />
+            </div>
+          </div>
+
+          <div class="form-group col-sm-12 col-md-6">
+            <label for="">experience<label class="red-text">*</label></label>
+            <div class="input-group mb-2">
+              <input
+                type="number"
+                class="form-control"
+                id="experience"
+                name="experience"
+                formControlName="experience"
+                placeholder="Enter specialization"
+              />
+            </div>
+          </div>
+          <div class="form-group col-sm-12 col-md-6">
+            <label for="">Qualification<label class="red-text">*</label></label>
+            <div class="input-group mb-2">
+              <input
+                type="text"
+                class="form-control"
+                id="qualification"
+                name="qualification"
+                formControlName="qualification"
+                placeholder="Enter qualification"
+              />
+            </div>
+
+            <div class="form-group col-sm-24 col-md-6">
+  
+             
+             <!--Using items input-->
+             <ng-select [items]="cars" 
+                        bindLabel="name" 
+                        bindValue="id" 
+                        [multiple]="true"
+                        id="location"
+                        name="location"
+                        formControlName="location"
+                        [(ngModel)]="selectedCar">
+             </ng-select>
+            </div>
+
+            <!-- <img class="p-2" [src]="selectedImage" height="300"> <br /> -->
+
+            <label for="">profile Image<label class="red-text">*</label></label>
+            <div class="input-group mb-2">
+              <input
+                #imageMenu
+                type="file"
+                accept="image/*"
+                (change)="processImage(imageMenu)"
+                formControlName="image"
+                id="image"
+                name="image"
+              />
+            </div>
+            <label for="">Document<label class="red-text">*</label></label>
+            <div class="input-group mb-6">
+              <input
+                #fileMenu
+                type="file"
+                accept="pdf/*"
+                (change)="fileUpload(fileMenu)"
+                formControlName="doc"
+                id="doc"
+                name="doc"
+              />
+            </div>
+          </div>
+        </div>
+        <span class="d-flex w-100 pl-2 pt-2">
+          <button class="btn btn-dark mr-3">
+            <p>Submit</p>
+          </button>
+
+          <button class="btn btn-outline-dark" (click)="back()">
+            <p>Cancel</p>
+          </button>
+        </span>
+      </form>
+
+      <!-- /.row -->
+    </div>
+  </div>
+  <!-- /.card -->
+</div>

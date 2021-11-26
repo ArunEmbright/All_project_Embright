@@ -1,0 +1,96 @@
+
+
+
+
+        <div class="account-pages my-5 pt-sm-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center mb-5 text-muted">
+                            <a routerLink="/" class="d-block auth-logo">
+                                <img src="assets/images/auticare-logo.png" alt="" height="100" class="auth-logo-dark mx-auto">
+                            </a>
+                            <p class="mt-3">Auticare OTP Verification</p>
+                        </div>
+                    </div>
+                </div>
+        <!-- end col -->
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-6 col-xl-5">
+                <!-- <div class="card"> -->
+
+                    <div class="card-body">
+
+                        <div class="p-2">
+                            <div class="text-center">
+
+                                <div class="avatar-md mx-auto">
+                                    <div class="avatar-title rounded-circle bg-light">
+                                        <i class="bx bxs-envelope h1 mb-0 text-primary"></i>
+                                    </div>
+                                </div>
+                                <div class="p-2 mt-4">
+
+                                    <h4>Verify your email</h4>
+                                    <p class="mb-5">Please enter the 6 digit code sent to <span
+                                            class="fw-semibold">{{email}}</span></p>
+
+
+                            <div>
+                                <h5 class="text-primary">OTP Verification</h5>
+                                
+                            </div>
+                            <!-- <button class="btn btn-outline-danger" (click)="therapist()">Therapist Login</button> -->
+                           
+                            <div class="mt-4">
+                                <form #form='ngForm' (ngSubmit)="VerifyOtp()">
+
+                                    
+                
+                                    <div class="input-div one">
+                                       
+                                        <!-- <div class="div">
+                                            <input [disabled]="true" type="text" class="input" placeholder="Email" [(ngModel)]="email"
+                                                name="email">
+                                            <br>
+                                            <br>
+                
+                                        </div> -->
+                                    </div>
+                                    <div class="input-div one">
+                                       
+                                        <div class="div">
+                                            <input type="password" class="form-control" placeholder="Enter Your OTP" name="otp" [(ngModel)]="otp">
+                                            <br>
+                                            <br>
+                
+                                        </div>
+                
+                                    </div>
+                
+                  
+                                    
+                                        <button class="btn btn-primary btn-block" value="Change password" type="submit">Submit</button>
+                                    
+                                    <div *ngIf="error">
+                                        <div class="alert">{{error}}</div>
+                
+                                    </div>
+                                </form>
+                               
+                                
+                            </div>
+                        </div>
+
+                        <div class="mt-4 mt-md-5 text-center">
+                            <!-- <p class="mb-0"> <i class="mdi mdi-heart text-danger"></i>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end col -->
+   
+<!-- end container-fluid -->

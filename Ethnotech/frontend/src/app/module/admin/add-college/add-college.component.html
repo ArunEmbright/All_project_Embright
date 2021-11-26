@@ -1,0 +1,74 @@
+<div class="page margintop3"  style="overflow-x: hidden;">
+    <div style="margin:12px">
+  
+      <div class="card boxshadow title-header">
+        <div style="display: flex;">
+          <img src="assets/images/media/logo2.png" class="header-brand-img desktop-logo h-100 loginlogo">
+          <div class="text-center title-pl">
+            <h2 class="fontweigt700 pt-4"> INDUSTRIAL INSTITUTE OUTREACH PROGRAM</h2>
+          </div>
+        </div>
+      </div>
+  
+      <!-- container opened -->
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-5 justify-content-center text-center form-align">
+            <div class="
+                card
+                padleftright
+                margintop35
+                borderround11
+                boxshadow
+                form-width
+              ">
+              <form [formGroup]="addCollege" (ngSubmit)="onSubmit()">
+                <div class="row">
+                  <div class="col-md-12 col-lg-12 pl-0">
+                    <div class="card-body p-6 about-con pabout">
+                      <div class="card-title text-center mb-4">
+                        <h2 class="fontweigt700 text-center form-title">
+                          Registration Form
+                        </h2>
+                        <!-- <p>hello:{{collegeListDrop}}</p> -->
+                      </div>
+                      <div class="form-group">
+                        <div class="form-group">
+                       
+                            <input type="text" formControlName="location" class="form-control borderround11"
+                             placeholder="Last Name" />
+                          </div>
+  
+                      </div>
+                      <div class="form-group">
+                       
+                        <tag-input [(ngModel)]='items' formControlName="college"></tag-input>
+                      </div>
+                     
+                      
+
+                      
+                     
+                     
+                      
+                      <div class="form-footer mt-1 margintop20 padding38">
+                        <button class="btn btn-info btn-pill" [disabled]="!addCollege.valid">
+                          Submit
+                        </button>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- container closed -->
+    </div>
+   
+  </div>
+  <!-- Username - UATEthnotech
+  Password - 4447f915b68e17a3338049a64220e08e -->

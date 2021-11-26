@@ -1,0 +1,113 @@
+<div class="container-fluid">
+    <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+        <div class="card-header">
+            <h3 class="card-title font-weight-bold">Institution Form</h3>
+
+            <div class="card-tools">
+                <a class="btn" (click)="back()" data-toggle="tooltip" data-placement="top" title="Back to menu list"><i
+                        class="fas fa-hand-point-left"></i></a>
+            </div>
+        </div>
+
+        <!-- /.card-header -->
+        <div class="card-body">
+            <form [formGroup]="menuForm" (ngSubmit)="save()">
+                <div class="row col-xl-6">
+                    <div class="form-group col-sm-12 col-md-6">
+                        <label for="">Institution name<label class="red-text">*</label></label>
+                        <div class="input-group mb-2">
+                            <input type="text" class="form-control" id="institutionName" name="institutionName"
+                                formControlName="institutionName" placeholder="Enter institution Name" />
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-12 col-md-6">
+                        <label for="">Registered address<label class="red-text">*</label></label>
+                        <div class="input-group mb-2">
+                            <input type="text" class="form-control" id="registeredAddress" name="registeredAddress" formControlName="registeredAddress"
+                                placeholder="Enter Registered Address" />
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-12 col-md-6">
+                        <label for="">Email <label class="red-text">*</label></label>
+                        <div class="input-group mb-2">
+                            <input type="text" class="form-control" id="email" name="email" formControlName="email"
+                                placeholder="Enter email" />
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-12 col-md-6">
+                        <label for="">Contact<label class="red-text">*</label></label>
+                        <div class="input-group mb-2">
+                            <input type="text" class="form-control" id="contact" name="contact"
+                                formControlName="contact" placeholder="Enter contact" />
+                        </div>
+                    </div>
+
+                    <div class="form-group col-sm-12 col-md-6">
+                        <label for="">GST Number<label class="red-text">*</label></label>
+                        <div class="input-group mb-2">
+                            <input type="number" class="form-control" id="GST" name="GST" formControlName="GST"
+                                placeholder="Enter specialization" />
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-12 col-md-6">
+
+
+                        <!-- <img class="p-2" [src]="selectedImage" height="300"> <br /> -->
+
+                        <label for="">Registration Documents<label class="red-text">*</label></label>
+                        <div class="input-group mb-2">
+                            <input #imageMenu type="file" accept="pdf/*" (change)="processImage(imageMenu)"
+                                formControlName="regDoc" id="regDoc" name="regDoc" />
+                        </div>
+                        <label for="">Other Document<label class="red-text">*</label></label>
+                        <div class="input-group mb-6">
+                            <input #fileMenu type="file" accept="pdf/*" (change)="fileUpload(fileMenu)"
+                                formControlName="doc" id="doc" name="doc" />
+                        </div>
+                        </div>
+                        <div class="form-group col-sm-12 col-md-6">
+                           
+                              <label for="dob" style="font-weight: bold;">Date of Collaboration :
+                              </label>
+                              <input type="date" class="form-control" formControlName="dob" id="dob"
+                                placeholder="Enter Date of Collaboration" [ngClass]="{
+                                  'has-danger':
+                                    menuForm.controls.dob.invalid &&
+                                    (menuForm.controls.dob.dirty ||
+                                      menuForm.controls.dob.touched),
+                                  'has-success':
+                                    menuForm.controls.dob.valid &&
+                                    (menuForm.controls.dob.dirty ||
+                                      menuForm.controls.dob.touched)
+                                }" />
+            
+                              <div class="form-control-feedback" *ngIf="
+                                  menuForm.get('dob').errors &&
+                                  (menuForm.get('dob').dirty ||
+                                    menuForm.get('dob').touched)
+                                ">
+                                <p style="color: red;" *ngIf="menuForm.get('dob').errors.required">
+                                  Date is required
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                
+                
+                <span class="d-flex w-100 pl-2 pt-2">
+                    <button class="btn btn-dark mr-3">
+                        <p>Submit</p>
+                    </button>
+
+                    <button class="btn btn-outline-dark" (click)="back()">
+                        <p>Cancel</p>
+                    </button>
+                </span>
+            </form>
+
+            <!-- /.row -->
+        </div>
+    </div>
+    <!-- /.card -->
+</div>

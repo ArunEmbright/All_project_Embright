@@ -1,0 +1,77 @@
+
+<div class="header">
+  <a href="#default" class="logo" style="max-width:50%;">
+    <img src="assets/images/media/logo2.png" class="header-brand-img desktop-logo h-100 loginlogo"></a>
+  
+    <div class="header-right">
+    <a class="active" href="#home">Home</a>
+    <a href="#/admin/payment-Details">Payment</a>
+    <a  (click)="onSubmit()">Log Out</a>
+  </div>
+</div>
+<div>
+<table class="table table-bordered ">
+    <thead style="background-color:rgb(28, 145, 199)">
+      <tr >
+        <th>college</th>
+        <th>Location</th>
+        <th>Register No</th>
+        <th>Year</th>
+        <th>department</th>
+        <th>email</th>
+        <th>Name</th>
+        
+        
+        <th>Phone Number</th>
+        <th>Guardian Name</th>
+        <th> Father Email</th>
+        <th>Father contact</th>
+        <th>Payment Method</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users ">
+        <td>{{user.college}}</td>
+        <td>{{user.location}}</td>
+        <td>
+          {{ user.registerNo }}
+        </td>
+        <td>{{user.year}}</td>
+        <td>
+          {{ user.department }}
+        </td>
+        <td>
+          {{ user.email  }}
+        </td>
+        
+       
+        <td>
+          {{ user.firstName }} {{user.lastName}}
+        </td>
+        <td>
+          {{ user.phoneNumber}}
+        </td>
+        <td>
+          {{ user.guardianFirstName }}  {{ user.guardianLastName }}
+        </td>
+        <td>
+          {{user.guardianEmail}}
+         </td>
+         <td>
+          {{user.guardianPhoneNumber}}
+         </td>
+        <td>
+         {{user.PaymentMode}}
+        </td>
+
+
+        
+
+       
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+  <!-- <a >Pyament Deatils</a> -->

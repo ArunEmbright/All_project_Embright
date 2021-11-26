@@ -1,0 +1,44 @@
+<form [formGroup]="editForm">
+    <label class="col-sm-4 col-form-label">First name</label>
+    <div class="form-group col-md-6">
+    <input
+    type="text"
+    formControlName="therapistName"
+    *ngIf="userItem?.therapistName!==undefined"
+    name="therapistName"
+    class="form-control"
+    formControlName="therapistName"
+    [value]="userItem?.therapistName"
+    [(ngModel)]="userItem.therapistName"
+    />
+    </div>
+
+    <div class="form-group col-md-6">
+        <label class="col-sm-4 col-form-label">Experience</label>
+    <input
+    *ngIf="userItem?.experience!==undefined"
+    type="text"
+    formControlName="experience"
+    name="experience"
+    class="form-control"
+    [value]="userItem?.experience"
+    [(ngModel)]="userItem.experience"
+    />
+</div>
+<div class="form-group col-md-6">
+    <label class="col-sm-4 col-form-label">Location</label>
+    <input
+    *ngIf="userItem?.location!==undefined"
+    type="text"
+    formControlName="location"
+    name="location"
+    class="form-control"
+    [value]="userItem?.location"
+    [(ngModel)]="userItem.location"
+    />
+</div>
+<div class="text-center">
+    <button (click)="onSubmit()" [routerLink]="['/admin/therapist-details']" class="btn btn-primary">submit</button>
+
+</div>
+</form>

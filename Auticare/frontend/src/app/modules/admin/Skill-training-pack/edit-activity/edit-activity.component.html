@@ -1,0 +1,47 @@
+<form [formGroup]="editForm">
+    <label class="col-sm-4 col-form-label">Activity name</label>
+    <div class="form-group col-md-6">
+    <input
+    type="text"
+    formControlName="activityName"
+    *ngIf="userItem?.activityName!==undefined"
+    name="activityName"
+    class="form-control"
+    formControlName="activityName"
+    [value]="userItem?.activityName"
+    [(ngModel)]="userItem.activityName"
+    />
+    </div>
+
+    <div class="form-group col-md-6">
+        <label class="col-sm-4 col-form-label">Skill Area</label>
+    <input
+    *ngIf="userItem?.skillArea!==undefined"
+    type="text"
+    formControlName="skillArea"
+    name="skillArea"
+    class="form-control"
+    [value]="userItem?.skillArea"
+    [(ngModel)]="userItem.skillArea"
+    />
+</div>
+<div class="form-group col-md-6">
+    <label class="col-sm-4 col-form-label">Type of Autism</label>
+    <input
+    *ngIf="userItem?.typeOfAutism!==undefined"
+    type="text"
+    formControlName="typeOfAutism"
+    name="typeOfAutism"
+    class="form-control"
+    [value]="userItem?.typeOfAutism"
+    [(ngModel)]="userItem.typeOfAutism"
+    />
+</div>
+<div class="form-group col-md-6">
+  
+    <div class="text-center">
+        <button (click)="onSubmit()" [routerLink]="['/admin/autism-pack']" class="btn btn-primary">submit</button>
+
+    </div>
+</div>
+</form>

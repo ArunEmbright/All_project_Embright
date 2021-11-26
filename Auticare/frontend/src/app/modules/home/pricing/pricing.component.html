@@ -1,0 +1,60 @@
+
+<div class="container" >
+<section class="app1 pricing" id="plan">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="title title2 title-inner">
+                    <div class="main-title">
+                        <!-- <button (click)="pay()" >pay</button> -->
+                        <h2 class="font-primary borders text-center main-text m-b-0 text-uppercase"><span>Book for skill assessment</span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <owl-carousel-o [options]="pricingcarouselOptions1" class="pricing-slider  price-margin">
+                    <ng-container *ngFor="let slide of pricing1">
+                        <ng-template carouselSlide class="item">
+                        <div class="price-container price-margin shadows text-center">
+                            <div class="price-feature-container set-relative">
+                                <div class="feature-text">
+                                    
+                                    <img [src]="slide.image" alt="" class="image-top">
+                                    <h3 class="feature-text-heading text-center font-primary">{{slide.heading}}</h3>
+                                    <hr/>
+                                </div>
+                                <div class="price-value">
+                                    <h4 class="price">{{slide.price}}</h4>
+                                </div>
+                                <div class="price-features">
+                                    <h5 class="price-feature text-center">{{slide.features1}}</h5>
+                                    <h5 class="invisible">{{slide.features2}}</h5>
+                                    <h5 class="price-feature text-center" style="color: red;"><s>{{slide.features3}}</s></h5></div>
+                                <a  class="link"   (click)="goToDetail(slide.url)" class=" btn btn-primary btn-gradient text-white btn-app1-theme">{{slide.btn}}</a>
+                                <div class="set-abs bottom-0">
+                                    <img [src]="slide.img" alt=""
+                                         class="img-fluid pricing-img">
+                                </div>
+                            </div>
+                        </div>
+                      </ng-template>
+                      </ng-container>
+                      
+                    </owl-carousel-o> 
+                    
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!--pricing app1 end-->
+
+
+<!--pricing app2 start-->
+
+
+</div>
+<div style="padding-top: 129px;" class="text-center">
+    <h5>Unsure of what plan to choose? Do not hesitate to contact us at Written by <a href="mailto:auticare@embrightinfotech.com">Auticare</a>.<br> We are here to help.</h5>
+</div>

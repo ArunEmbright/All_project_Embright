@@ -1,0 +1,74 @@
+<div class="card">
+    <div class="wrapper">
+      <div class="card-header">
+        <div class="input-group input-group-sm" style="width: 150px;">
+  
+          
+        </div>
+        <button class="btn btn-primary" [routerLink]="['/admin/add-activity']" style="float: right;">Add Activity
+      </button>
+        </div>
+      <div class="card-body">
+  
+        <table class="table table-bordered ">
+          <thead>
+            <tr>
+              <th> ID</th>
+              <th>Activity Name</th>
+              <!-- <th>Category</th> -->
+              <th>Type of Autism</th>
+              
+              <th>Skill Area</th>
+              <th>Activity Link</th>
+              <th>Created on </th>
+              <!-- <th>Updated On</th> -->
+           
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of activities">
+              <th>{{user.activityId}}</th>
+              <td>
+                {{ user.activityName }}
+              </td>
+              <td>
+                {{ user.typeOfAutism }}
+              </td>
+              <td>
+                {{ user.skillArea }}
+              </td>
+              
+              <!--<td>
+                    {{ list.firstName }}
+                  </td>-->
+                  <td>
+                    <a target="_blank" href="{{user?.activityPath}}">  <i class="bx bxs-file-doc"></i> </a>
+                  </td>
+  
+  
+              <td>
+                {{ user.CreatedOn  | date}}
+              </td>
+              <!--
+                  <td>
+                    {{ list.designation }}
+                  </td>-->
+  
+              <td>
+                <a class="action-btn" [routerLink]="['/admin/edit-activity', user._id]">
+                  <i class="bx bx-edit"></i>
+              </a>
+                <a class="action-btn" (click)="onDelete(user._id)" >
+                  <i class="bx bx-x"></i>
+                </a>
+  
+              </td>
+            </tr>
+  
+          </tbody>
+        </table>
+  
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,79 @@
+<div class="card">
+  <div class="wrapper">
+    <div class="card-header">
+      <div class="input-group input-group-sm" style="width: 150px;">
+
+        
+      </div>
+      <button class="btn btn-primary" [routerLink]="['/admin/add-user']" style="float: right;">Add
+    </button>
+      </div>
+    <div class="card-body">
+
+      <table class="table table-bordered ">
+        <thead>
+          <tr>
+            <th>Child ID</th>
+            <th>Child Name</th>
+            <th>Age</th>
+            <th>Date of Birth</th>
+            
+            <th>Full Name</th>
+            <th>Relationship with child</th>
+            <th>Mobile Number</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <th>{{user.userId}}</th>
+            <td>
+              {{ user.patientName }}
+            </td>
+            <td>
+              {{ user.age }}
+            </td>
+            <td>
+              {{ user.dob | date }}
+            </td>
+            
+            <!--<td>
+                  {{ list.firstName }}
+                </td>-->
+            <td>
+              {{ user.firstName }} {{user.lastName}}
+            </td>
+            <td>
+              {{ user.relationType }}
+            </td>
+            <td>
+              {{ user.mobileNumber }}
+            </td>
+
+
+            <td>
+              {{ user.email}}
+            </td>
+            <!--
+                <td>
+                  {{ list.designation }}
+                </td>-->
+
+            <td>
+              <a class="action-btn" [routerLink]="['/admin/edit-user', user._id]">
+                <i class="bx bx-edit"></i>
+            </a>
+              <a class="action-btn" (click)="onDelete(user._id)">
+                <i class="bx bx-x"></i>
+              </a>
+
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

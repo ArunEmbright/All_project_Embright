@@ -1,0 +1,56 @@
+<div class="card">
+    <div class="wrapper">
+      <div class="card-header">
+        <div class="input-group input-group-sm" style="width: 150px;">
+  
+          
+          
+        </div>
+        <button class="btn btn-primary"  [routerLink]="['/admin/therapist-form']"  style="float: right;">Add
+      </button>
+        </div>
+<div class="card-body">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+               
+                <th>Name</th>
+                <th>Specialization</th>
+                <th style="width: 20px">Experience</th>
+                <th>Qualification</th>
+                <th>Location</th>
+                <th>Certificate</th>
+                <th>Action</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pp of therapist">
+              
+                <td>{{pp.therapistName}}</td>
+                <td>{{pp.specialization}}</td>
+                <td>{{pp.experience}}</td>
+                <td>{{pp.qualification}}</td>
+               <td>{{pp.location}}</td>
+               <td>
+                <a target="_blank" href="{{pp?.certPath}}">  <i class="bx bxs-file-doc"></i> </a>
+               </td>
+               <td>
+                <a class="action-btn" [routerLink]="['/admin/edit-therapist', pp._id]">
+                    <i class="bx bx-edit" ></i>
+                </a>
+                  <a class="action-btn" (click)="onDelete(pp._id)">
+                    <i class="bx bx-x"></i>
+                  </a>
+               </td>
+                
+            </tr>
+            
+
+        </tbody>
+    </table>
+</div>
+<!-- /.card-body -->
+
+</div>
+</div>

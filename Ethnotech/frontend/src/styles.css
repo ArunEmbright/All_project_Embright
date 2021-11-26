@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/css/style.css";
+@import "assets/css/default.css";
+
+@import "assets/css/skins.css";
+@import "assets/css/tables.css";
+@import "assets/plugins/sidemenu/sidemenu.css";
+@import "assets/plugins/sidebar/sidebar.css";
+@import "assets/plugins/tabs/style.css";
+@import "assets/plugins/single-page/css/main.css";
+@import "assets/plugins/single-page/css/single-page.css";
+@import "assets/plugins/sidemenu-responsive-tabs/css/sidemenu-responsive-tabs.css";
+@import "assets/plugins/p-scroll/p-scroll.css";
+@import "~animate.css/animate.min";

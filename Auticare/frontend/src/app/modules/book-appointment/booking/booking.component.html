@@ -1,0 +1,99 @@
+<div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div>
+                <div class="my-auto">
+                  <div>
+                    <h5 class="text-primary">Booking for Consultation</h5>
+                    <!-- <p class="text-muted">Register Therapist</p> -->
+                  </div>
+                  <!-- <button class="btn btn-outline-danger" (click)="therapist()">Therapist Login</button> -->
+  
+                  <div class="mt-4">
+                    <form >
+                      <div class="mb-3">
+                        <label for="id">Child ID</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="id"
+                          formControlName="id"
+                          placeholder="Enter child Name"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="name"> Name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="name"
+                          formControlName="name"
+                          placeholder="Enter child Name"
+                        />
+                      </div>
+  
+                      <div class="mb-3">
+                        <label for="dob">Age</label>
+                        <input type="date" class="form-control" formControlName="dob"
+                          placeholder="Enter your child Date of Birth" aria-label="dob" aria-describedby="dob-addon" />
+  
+                      </div>
+                      <div class="mb-3">
+                        <label for="relationType" class="col-md-4 col-form-label">Type  Section  </label>
+                        
+                          <select formControlName="relationType" class="col-md-4 col-form-label" id="relationType"
+                            class="form-select" ngDefaultControl >
+                            <option value="null" disabled="true" [selected]="true">
+                              Select Session
+                            </option>
+                            
+                          </select>
+    
+                        </div>
+  
+                      <div class="mt-3 d-grid">
+                        <button class="btn btn-primary waves-effect waves-light btn-sm" type="submit">
+                          Book Now
+                        </button>
+                      </div>
+  
+                      <!-- 
+                                <div class="mt-4 text-center">
+                                    <h5 class="font-size-14 mb-3">Sign in with</h5>
+    
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a href="javascript::void()"
+                                                class="social-list-item bg-primary text-white border-primary">
+                                                <i class="mdi mdi-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="javascript::void()"
+                                                class="social-list-item bg-info text-white border-info">
+                                                <i class="mdi mdi-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="javascript::void()"
+                                                class="social-list-item bg-danger text-white border-danger">
+                                                <i class="mdi mdi-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div> -->
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+  

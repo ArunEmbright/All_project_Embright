@@ -1,0 +1,202 @@
+<div class="page margintop3"  style="overflow-x: hidden;">
+  <div style="margin:12px">
+
+    <div class="card boxshadow title-header">
+      <div style="display: flex;">
+        <img src="assets/images/media/logo2.png" class="header-brand-img desktop-logo h-100 loginlogo">
+        <div class="text-center title-pl">
+          <h2 class="fontweigt700 pt-4"> INDUSTRY INSTITUTE OUTREACH PROGRAM</h2>
+      
+          <p></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- container opened -->
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-5 justify-content-center text-center form-align">
+          <div class="
+              card
+              padleftright
+              margintop35
+              borderround11
+              boxshadow
+              form-width
+            ">
+            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+              <div class="row">
+                <div class="col-md-12 col-lg-12 pl-0">
+                  <div class="card-body p-6 about-con pabout">
+                    <div class="card-title text-center mb-4">
+                      <h2 class="fontweigt700 text-center form-title">
+                        Registration Form
+                      </h2>
+                      <!-- <p>hello:{{collegeListDrop}}</p> -->
+                    </div>
+                    <div class="form-group">
+                      <select class="form-control select2 w-100 borderround11 mt-4" formControlName="location"   placeholder="Location" (change)="locationSet($event)">
+                       
+                        <option value="">Location</option>
+                        <option class="dropdown-item" *ngFor="let payment of Location" [value]="payment.id"> {{
+                          payment.name }}
+
+                      </select>
+
+                    </div>
+                  
+
+                    <div class="form-group">
+                      <select class="form-control select2 w-100 borderround11 mt-4" formControlName="college"
+                        (change)="College($event)">
+
+                        <option value="">college</option>
+                        <option class="dropdown-item" *ngFor="let payment of collegeListDrop" [value]="payment.id"> {{ payment.name }}
+
+                      </select>
+
+                    </div>
+                   
+                    <div class="form-group">
+                      <input type="text" formControlName="register_no" class="form-control borderround11"
+                                                                   [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+
+                      placeholder="USN/Register No." />
+                      <small
+                        *ngIf="registrationForm.get('register_no')?.invalid && registrationForm.get('register_no')?.touched "
+                        class="text-danger pb-3" style="text-align: left;float: left;">Register number is
+                        required</small>
+
+                    </div>
+                    <div class="form-group">
+                      <input type="text" [(ngModel)]="U.name" formControlName="name" class="form-control borderround11" placeholder="Name"
+                        (change)="FirstName($event)" />
+                      <small *ngIf="registrationForm.get('name')?.invalid && registrationForm.get('name')?.touched "
+                        class="text-danger pb-3" style="text-align: left;float: left;">Name is required</small>
+
+                    </div>
+                    <div class="form-group">
+                      <input type="text" [(ngModel)]="U.lastName" formControlName="lastName" class="form-control borderround11"
+                        (change)="LastName($event)" placeholder="Last Name" />
+                      <small
+                        *ngIf="registrationForm.get('lastName')?.invalid && registrationForm.get('lastName')?.touched "
+                        class="text-danger pb-3" style="text-align: left;float: left;">Last Name is required</small>
+
+                    </div>
+                    <div class="form-group">
+                      <input type="email" [(ngModel)]="U.email" formControlName="email" class="form-control borderround11"
+                      [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+ 
+                      (change)="Email($event)" placeholder="Email" />
+                     
+                        <div *ngIf="submitted && f.email.errors" style="text-align: left;float: left;" class="invalid-feedback">
+                          <div *ngIf="f.email.errors.required">Email is Required</div>
+                          <div *ngIf="f.email.errors.email">Email must be a valid email address 
+                          </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input type="number" formControlName="phone" [(ngModel)]="U.contact" class="form-control borderround11"
+                      [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"
+                        (change)="Phone($event)" placeholder="Contact No." />
+                    
+                        <small *ngIf="f.phone.touched && f.phone.invalid" style="text-align: left;float: left;" class="invalid-feedback">  
+                          <div *ngIf="f.phone.errors?.required">Mobile Number is required.</div>  
+                          <div *ngIf="f.phone.errors?.pattern">Please, Enter 10 digit Mobile Number.</div>  
+                        </small>
+                    </div>
+                    <div class="form-group">
+                      <select class="form-control select2 w-100 borderround11 mt-4" formControlName="year" (change)="yearSet()">
+                        
+                        <option value="">Year</option>
+                        <option class="dropdown-item" *ngFor="let year of year" [value]="year.id">{{year.name}}</option>
+
+                      </select>
+                    </div>
+                   
+                    <div class="form-group">
+                      <select class="form-control select2 w-100 borderround11 mt-4" formControlName="department"
+                        (change)="Course($event)">
+
+                        <option value="">Department</option>
+                        <option class="dropdown-item" *ngFor="let payment of departmentListDrop" [value]="payment.id"> {{ payment.name }}
+
+                      </select>
+
+                    </div>
+                    <div class="form-group">
+                      <input type="text" formControlName="father_name"  class="form-control borderround11"
+                        placeholder="Father/Mother/Guardian Name" />
+                      <small
+                        *ngIf="registrationForm.get('father_name')?.invalid && registrationForm.get('father_name')?.touched "
+                        class="text-danger pb-3" style="text-align: left;float: left;">Father/Mother/Guardian Name is
+                        required</small>
+
+                    </div>
+                    <div class="form-group">
+                      <input type="text" formControlName="father_last"  class="form-control borderround11"
+                        placeholder="Father/Mother/Guardian Last Name" />
+                      <small
+                        *ngIf="registrationForm.get('father_last')?.invalid && registrationForm.get('father_last')?.touched "
+                        class="text-danger pb-3" style="text-align: left;float: left;">Father/Mother/Guardian Last Name
+                        is required</small>
+
+                    </div>
+                    <div class="form-group">
+                      <input type="email" formControlName="father_email" class="form-control borderround11"
+                      [ngClass]="{ 'is-invalid': submitted && f.father_email.errors }"
+                        placeholder="Father Email" />
+                        
+                        <div *ngIf="submitted && f.father_email.errors" style="text-align: left;float: left;" class="invalid-feedback">
+                          <div *ngIf="f.father_email.errors.required">Email is Required</div>
+                          <div *ngIf="f.father_email.errors.email">Email must be a valid email address 
+                          </div>
+                          </div>
+
+                    </div>
+                    <div class="form-group">
+                      <input type="number" formControlName="father_phone" class="form-control borderround11"
+                      [ngClass]="{ 'is-invalid': submitted && f.father_phone.errors }"
+                        placeholder="Father Contact No." />
+                        <small *ngIf="f.father_phone.touched && f.father_phone.invalid" style="text-align: left;float: left;" class="invalid-feedback">  
+                          <div *ngIf="f.father_phone.errors?.required">Mobile Number is required.</div>  
+                          <div *ngIf="f.father_phone.errors?.pattern">Please, Enter 10 digit Mobile Number.</div>  
+                        </small>
+
+                    </div>
+                    <select class="form-control select2 w-100 borderround11 mt-4" formControlName="paymentMode">
+
+                      <option>Payment</option>
+                      <option class="dropdown-item" *ngFor="let payment of paymentMode"> {{ payment }}
+
+                    </select>
+                    
+                    <div class="form-group">
+                      <div class="policy" >
+                        <input type="checkbox" name="checkbox" formControlName="checkbox"  class="defaultCheckbox" id="agree" />
+                      <p>  I've read and accept the <a href="/#/privacy_policy"><u>Privacy & Policy</u></a> and <a href="/#/terms_condition"><u>Terms & Condition</u></a></p> </div>
+                    </div>
+                    <br/>
+                   
+                    
+                    <div class="form-footer mt-1 margintop20 padding38">
+                      <button class="btn btn-info btn-pill"  >
+                        Submit
+                      </button>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- container closed -->
+  </div>
+ 
+</div>
+<!-- Username - UATEthnotech
+Password - 4447f915b68e17a3338049a64220e08e -->

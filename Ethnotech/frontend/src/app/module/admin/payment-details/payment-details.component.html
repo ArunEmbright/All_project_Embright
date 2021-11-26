@@ -1,0 +1,54 @@
+<div class="header">
+  <a href="#default" class="logo" style="max-width:50%;">
+    <img src="assets/images/media/logo2.png" class="header-brand-img desktop-logo h-100 loginlogo"></a>
+  
+    <div class="header-right">
+    <a href="#/admin/user-detail" >Home</a>
+    <a  class="active" href="#/admin/payment-Details">Payment</a>
+    <a  (click)="onSubmit()">Log Out</a>
+  </div>
+</div>
+<table class="table table-bordered ">
+    <thead style="background-color:rgb(28, 145, 199)">
+      <tr >
+       
+        <th>email</th>
+        <th>Name</th>
+        
+        
+        
+        <th>Payment ID</th>
+        <th>Amount</th>
+        
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of payment ">
+        
+        <td>
+          {{ user.email  }}
+        </td>
+        
+       
+        <td>
+          {{ user.firstName }} {{user.lastName}}
+        </td>
+        
+        <td>
+       {{user.payment_id}}
+        </td>
+        <td>
+          {{user.amount}}
+         </td>
+         
+        
+
+
+        
+
+       
+      </tr>
+
+    </tbody>
+  </table>

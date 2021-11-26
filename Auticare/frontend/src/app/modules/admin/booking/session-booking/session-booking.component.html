@@ -1,0 +1,464 @@
+<div
+  class="jumbotron"
+
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 offset-md-0">
+        <div style="align-content: center;">
+          <!-- Designing Add User Form-->
+          <form
+            [formGroup]="addForm"
+           
+            class="card-block card wow fadeInLeft boxshadow"
+            style="padding: 50px;"
+            data-wow-delay="0.3s"
+          >
+            <h3
+              class="h3 text-shadow text-center"
+              style="font-weight: bolder; color: black; margin-bottom: 20px;"
+            >
+              Add New child
+            </h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="LastName" style="font-weight: bold;"
+                      >User ID :
+                    </label>
+                    <input
+                      type="text"
+                      name=""
+                      id=""
+                      class="form-control"
+                      formControlName="userId"
+                      placeholder="userId"
+                      required
+                      [ngClass]="{
+                        'has-danger':
+                          addForm.controls.userId.invalid &&
+                          (addForm.controls.userId.dirty ||
+                            addForm.controls.userId.touched),
+                        'has-success':
+                          addForm.controls.userId.valid &&
+                          (addForm.controls.userId.dirty ||
+                            addForm.controls.userId.touched)
+                      }"
+                    />
+                
+                    <div
+                      class="form-control-feedback"
+                      *ngIf="
+                        addForm.get('userId').errors &&
+                        (addForm.get('userId').dirty ||
+                          addForm.get('userId').touched)
+                      "
+                    >
+                      <p
+                        style="color: red;"
+                        *ngIf="addForm.get('userId').errors.required"
+                      >
+                        First Name is required
+                      </p>
+                      <p
+                        style="color: red;"
+                        *ngIf="addForm.get('userId').errors.pattern"
+                      >
+                        Only albhabets allowed.
+                      </p>
+                    </div>
+                  </div>
+                <div class="col-md-6">
+                    <label for="LastName" style="font-weight: bold;"
+                      >Therapist Name :
+                    </label>
+                    <input
+                      type="text"
+                      name=""
+                      id=""
+                      class="form-control"
+                      formControlName="FirstName"
+                      placeholder="FirstName"
+                      required
+                      [ngClass]="{
+                        'has-danger':
+                          addForm.controls.therapistName.invalid &&
+                          (addForm.controls.therapistName.dirty ||
+                            addForm.controls.therapistName.touched),
+                        'has-success':
+                          addForm.controls.therapistName.valid &&
+                          (addForm.controls.therapistName.dirty ||
+                            addForm.controls.therapistName.touched)
+                      }"
+                    />
+    
+                    <div
+                      class="form-control-feedback"
+                      *ngIf="
+                        addForm.get('therapistName').errors &&
+                        (addForm.get('therapistName').dirty ||
+                          addForm.get('therapistName').touched)
+                      "
+                    >
+                      <p
+                        style="color: red;"
+                        *ngIf="addForm.get('therapistName').errors.required"
+                      >
+                        First Name is required
+                      </p>
+                      <p
+                        style="color: red;"
+                        *ngIf="addForm.get('therapistName').errors.pattern"
+                      >
+                        Only albhabets allowed.
+                      </p>
+                    </div>
+                  </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="LastName" style="font-weight: bold;"
+                  >First Name :
+                </label>
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  class="form-control"
+                  formControlName="FirstName"
+                  placeholder="FirstName"
+                  required
+                  [ngClass]="{
+                    'has-danger':
+                      addForm.controls.FirstName.invalid &&
+                      (addForm.controls.FirstName.dirty ||
+                        addForm.controls.FirstName.touched),
+                    'has-success':
+                      addForm.controls.FirstName.valid &&
+                      (addForm.controls.FirstName.dirty ||
+                        addForm.controls.FirstName.touched)
+                  }"
+                />
+
+                <div
+                  class="form-control-feedback"
+                  *ngIf="
+                    addForm.get('FirstName').errors &&
+                    (addForm.get('FirstName').dirty ||
+                      addForm.get('FirstName').touched)
+                  "
+                >
+                  <p
+                    style="color: red;"
+                    *ngIf="addForm.get('FirstName').errors.required"
+                  >
+                    First Name is required
+                  </p>
+                  <p
+                    style="color: red;"
+                    *ngIf="addForm.get('FirstName').errors.pattern"
+                  >
+                    Only albhabets allowed.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="LastName" style="font-weight: bold;"
+                  >Last Name :
+                </label>
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  class="form-control"
+                  formControlName="LastName"
+                  placeholder="LastName"
+                  required
+                  [ngClass]="{
+                    'has-danger':
+                      addForm.controls.LastName.invalid &&
+                      (addForm.controls.LastName.dirty ||
+                        addForm.controls.LastName.touched),
+                    'has-success':
+                      addForm.controls.LastName.valid &&
+                      (addForm.controls.LastName.dirty ||
+                        addForm.controls.LastName.touched)
+                  }"
+                />
+
+                <div
+                  class="form-control-feedback"
+                  *ngIf="
+                    addForm.get('LastName').errors &&
+                    (addForm.get('LastName').dirty ||
+                      addForm.get('LastName').touched)
+                  "
+                >
+                  <p
+                    style="color: red;"
+                    *ngIf="addForm.get('LastName').errors.required"
+                  >
+                    Last Name is required
+                  </p>
+                  <p
+                    style="color: red;"
+                    *ngIf="addForm.get('LastName').errors.pattern"
+                  >
+                    Only albhabets allowed.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+
+              <div class="col-md-6">
+                <label for="LastName" style="font-weight: bold;"
+                  >Child Name :
+                </label>
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  class="form-control"
+                  formControlName="patientName"
+                  placeholder="patientName"
+                  required
+                  [ngClass]="{
+                    'has-danger':
+                      addForm.controls.patientName.invalid &&
+                      (addForm.controls.patientName.dirty ||
+                        addForm.controls.patientName.touched),
+                    'has-success':
+                      addForm.controls.patientName.valid &&
+                      (addForm.controls.patientName.dirty ||
+                        addForm.controls.patientName.touched)
+                  }"
+                />
+
+                <div
+                  class="form-control-feedback"
+                  *ngIf="
+                    addForm.get('patientName').errors &&
+                    (addForm.get('patientName').dirty ||
+                      addForm.get('patientName').touched)
+                  "
+                >
+                  <p
+                    style="color: red;"
+                    *ngIf="addForm.get('patientName').errors.required"
+                  >
+                    child Name is required
+                  </p>
+                  <p
+                    style="color: red;"
+                    *ngIf="addForm.get('patientName').errors.pattern"
+                  >
+                    Only albhabets allowed.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="relationType" style="font-weight: bold;"
+                    >Relation With Child:
+                  </label>
+                  <select
+                    class="form-control"
+                    formControlName="relationType"
+                    id="relationType"
+                    placeholder="Enter Relation Type"
+                    required
+                    [ngClass]="{
+                      'has-danger':
+                        addForm.controls.relationType.invalid &&
+                        (addForm.controls.relationType.dirty ||
+                          addForm.controls.relationType.touched),
+                      'has-success':
+                        addForm.controls.relationType.valid &&
+                        (addForm.controls.relationType.dirty ||
+                          addForm.controls.relationType.touched)
+                    }"
+                  >
+                  <option value="null" disabled="true" [selected]="true">Select Relationship</option>
+                  <option class="dropdown-item" *ngFor="let relation of relationship"> {{ relation }}
+                  </option>
+                  </select>
+                  <div
+                    class="form-control-feedback"
+                    *ngIf="
+                      addForm.get('relationType').errors &&
+                      (addForm.get('relationType').dirty ||
+                        addForm.get('relationType').touched)
+                    "
+                  >
+                    <p
+                      style="color: red;"
+                      *ngIf="addForm.get('relationType').errors.required"
+                    >
+                    Relation Type is required
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="LastName" style="font-weight: bold;"
+                  >Email :
+                </label>
+                <div class="form-group has-success">
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    class="form-control"
+                    formControlName="email"
+                    placeholder="email"
+                    [ngClass]="{
+                      'has-danger':
+                        addForm.controls.email.invalid &&
+                        (addForm.controls.email.dirty ||
+                          addForm.controls.email.touched),
+                      'has-success':
+                        addForm.controls.email.valid &&
+                        (addForm.controls.email.dirty ||
+                          addForm.controls.email.touched)
+                    }"
+                  />
+                  <div
+                    class="form-control-feedback"
+                    *ngIf="
+                      addForm.get('email').errors &&
+                      (addForm.get('email').dirty ||
+                        addForm.get('email').touched)
+                    "
+                  >
+                    <p
+                      style="color: red;"
+                      *ngIf="addForm.get('email').errors.required"
+                    >
+                      email is required
+                    </p>
+                    <p
+                      style="color: red;"
+                      *ngIf="addForm.get('email').errors.pattern"
+                    >
+                      Please enter valid email address
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="mobileNumber" style="font-weight: bold;"
+                    >Mobile No :
+                  </label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    maxlength="10"
+                    formControlName="mobileNumber"
+                    id="mobileNumber"
+                    placeholder="Mobile No "
+                    [ngClass]="{
+                      'has-danger':
+                        addForm.controls.mobileNumber.invalid &&
+                        (addForm.controls.mobileNumber.dirty ||
+                          addForm.controls.mobileNumber.touched),
+                      'has-success':
+                        addForm.controls.mobileNumber.valid &&
+                        (addForm.controls.mobileNumber.dirty ||
+                          addForm.controls.mobileNumber.touched)
+                    }"
+                  />
+
+                  <div
+                    class="form-control-feedback"
+                    *ngIf="
+                      addForm.get('mobileNumber').errors &&
+                      (addForm.get('mobileNumber').dirty ||
+                        addForm.get('mobileNumber').touched)
+                    "
+                  >
+                    <p
+                      style="color: red;"
+                      *ngIf="addForm.get('mobileNumber').errors.required"
+                    >
+                      Contact No is required
+                    </p>
+                    <p
+                      style="color: red;"
+                      *ngIf="addForm.get('mobileNumber').errors.pattern"
+                    >
+                      Only Number allowed.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="dob" style="font-weight: bold;"
+                    >Date of Birth :
+                  </label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    formControlName="dob"
+                    id="dob"
+                    placeholder="Enter Date of Birth"
+                    [ngClass]="{
+                      'has-danger':
+                        addForm.controls.dob.invalid &&
+                        (addForm.controls.dob.dirty ||
+                          addForm.controls.dob.touched),
+                      'has-success':
+                        addForm.controls.dob.valid &&
+                        (addForm.controls.dob.dirty ||
+                          addForm.controls.dob.touched)
+                    }"
+                  />
+
+                  <div
+                    class="form-control-feedback"
+                    *ngIf="
+                      addForm.get('dob').errors &&
+                      (addForm.get('dob').dirty ||
+                        addForm.get('dob').touched)
+                    "
+                  >
+                    <p
+                      style="color: red;"
+                      *ngIf="addForm.get('dob').errors.required"
+                    >
+                      Date is required
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+
+            
+           
+
+            
+            <br />
+            <br />
+            <div class="text-center">
+              <button
+              (click)="onSubmit()"
+                class="btn btn-success"
+                [disabled]="addForm.invalid"
+                style="font-weight: bold;"
+              >
+                Register
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

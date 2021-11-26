@@ -1,0 +1,73 @@
+<div class="card">
+    <div class="wrapper">
+      <div class="card-header">
+        <div class="input-group input-group-sm" style="width: 150px;">
+          
+  <div class="float-right">
+    <div class="text-center"><h5>Therapy section</h5></div>
+  </div>
+        </div>
+        <button class="btn btn-primary" [routerLink]="['/admin/book-session']" style="float: right;">Add
+        </button>
+      </div>
+      <div class="card-body">
+  
+        <table class="table table-bordered ">
+          <thead>
+            <tr>
+              <th>Therapist Name</th>
+              <th>user Id</th>
+              <th>user Name </th>
+              <th>Child Name</th>
+              
+              <th>mobile number</th>
+              <th>Age</th>
+              <th>Session book at</th>
+             
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{user.therapistName}}</td>
+              <td>{{user.userId}}</td>
+              <td>
+                {{ user.firstName }} {{user.lastName}}
+              </td>
+              
+              <td>
+                {{ user.patientName }}
+              </td>
+              <!--<td>
+                    {{ list.firstName }}
+                  </td>-->
+                  
+                  <td>
+                    {{ user.mobileNumber }} 
+                  </td>
+                  <td>
+                    {{ user.age }} 
+                  </td>
+              
+             
+              <td>
+                {{ user.SessionBookingAt}}
+              </td>
+              <!--
+                  <td>
+                    {{ list.designation }}
+                  </td>-->
+  
+              <td>
+                <a class="action-btn" >
+                  <i class="bx-icons">delete</i>
+                </a>
+                
+              </td>
+            </tr>
+  
+          </tbody>
+        </table>
+  
+      </div>
+    </div>
+  </div>

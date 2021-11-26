@@ -1,0 +1,56 @@
+<div class="card">
+  <div class="wrapper">
+    <div class="card-header">
+      <div class="input-group input-group-sm" style="width: 150px;">
+  
+<div class="float-right">
+<div class="text-center"><h5>Free Assessment</h5></div>
+</div>
+      </div>
+    </div>
+    <div class="card-body">
+  
+      <table class="table table-bordered ">
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Child Name</th>
+            <th>Age</th>
+            <th>ISAA Score</th>
+            <th>Degree of Autism</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let score of scores">
+            <th>{{score.userId}}</th>
+            <td>
+              {{ score.patientName }}
+            </td>
+            <td>
+              {{ score.age }}
+            </td>
+            <td>
+              {{ score.sum }}
+            </td>
+            <td>
+              {{score.degreeOfAutism}}
+            </td>
+            <!--<td>
+                  {{ list.firstName }}
+                </td>-->
+               
+            <!--
+                <td>
+                  {{ list.designation }}
+                </td>-->
+
+            
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

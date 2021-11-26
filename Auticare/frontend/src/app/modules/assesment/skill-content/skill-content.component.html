@@ -1,0 +1,37 @@
+<h2 class=" text-center Display 3">
+  <ul>{{title}}</ul>
+</h2>
+<div class="row">
+  <div class="col-lg-8">
+    <div class="card">
+      <div class="card-body">
+        <div *ngFor="let user of activities">
+
+          <h3> {{user.activityName}}</h3>
+          <video width="550" (playing)="onPlayingVideo($event)" poster="assets/images/auticare-logo.png"
+            controlsList="nodownload" controls>
+            <source src="{{user?.activityPath}}" type="video/mp4">
+            <source src="{{user?.activityPath}}" type="video/ogg">
+
+            Your browser does not support HTML5 video.
+          </video>
+
+
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" a routerLink="/home/pricing">
+  <h5>
+    Please Use our Premium Membership for playing this activities
+  </h5>
+
+  <video width="400" poster="https://static.thenounproject.com/png/556246-200.png" controlsList="nodownload" controls>
+    <source src="" type="video/mp4">
+    <source src="" type="video/ogg">
+
+    Your browser does not support HTML5 video.
+  </video>
+</div>

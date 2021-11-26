@@ -1,0 +1,57 @@
+<form [formGroup]="editForm">
+    <label class="col-sm-4 col-form-label">First name</label>
+    <div class="form-group col-md-6">
+    <input
+    type="text"
+    formControlName="firstName"
+    *ngIf="userItem?.firstName!==undefined"
+    name="firstName"
+    class="form-control"
+    formControlName="firstName"
+    [value]="userItem?.firstName"
+    [(ngModel)]="userItem.firstName"
+    />
+    </div>
+
+    <div class="form-group col-md-6">
+        <label class="col-sm-4 col-form-label">Last name</label>
+    <input
+    *ngIf="userItem?.lastName!==undefined"
+    type="text"
+    formControlName="lastName"
+    name="lastName"
+    class="form-control"
+    [value]="userItem?.lastName"
+    [(ngModel)]="userItem.lastName"
+    />
+</div>
+<div class="form-group col-md-6">
+    <label class="col-sm-4 col-form-label">Mobile Number</label>
+    <input
+    *ngIf="userItem?.mobileNumber!==undefined"
+    type="text"
+    formControlName="mobileNumber"
+    name="mobileNumber"
+    class="form-control"
+    [value]="userItem?.mobileNumber"
+    [(ngModel)]="userItem.mobileNumber"
+    />
+</div>
+<div class="form-group col-md-6">
+    <label class="col-sm-4 col-form-label">child name</label>
+    <input
+    *ngIf="userItem?.patientName!==undefined"
+    type="text"
+    formControlName="patientName"
+    name="patientName"
+    class="form-control"
+    [value]="userItem?.patientName"
+    [(ngModel)]="userItem.patientName"
+    
+    />
+    <div class="text-center">
+        <button (click)="onSubmit()" [routerLink]="['/admin/users']" class="btn btn-primary">submit</button>
+
+    </div>
+</div>
+</form>

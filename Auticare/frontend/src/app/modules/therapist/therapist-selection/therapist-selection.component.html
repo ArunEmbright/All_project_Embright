@@ -1,0 +1,112 @@
+<div class="container-fluid">
+  <!-- start page title -->
+  <!-- <app-page-title
+    title="Filter"
+    [breadcrumbItems]="breadCrumbItems"
+  ></app-page-title> -->
+  <!-- end page title -->
+
+  <!-- Drop down component -->
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Filter Result</h4>
+        <p class="card-title-desc mb-3">
+          Use the dropdown below to filter Doctors by Location
+        </p>
+        <div class="">
+          <div class="btn-group me-1 mt-2" ngbDropdown>
+            <div>
+              <select
+                class="form-select"
+                ngModel="selectedLocation"
+                ngDefaultControl
+                (change)="locationFilter()"
+              >
+                <option
+                  value="undefined"
+                  class="dropdown-item"
+                  selected
+                  disabled
+                >
+                  Select nearby location
+                </option>
+                <option class="dropdown-item" *ngFor="let item of dropDownItem">
+                  {{ item }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <!-- /btn-group -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end col -->
+  <!-- card stacks -->
+  <div class="row">
+    <div class="col-lg-4" *ngFor="let item of doctors">
+      <div class="card">
+        <div class="bg-primary bg-soft">
+          <div class="row">
+            <div class="col-7">
+              <div class="text-primary p-3">
+                <h5 class="text-primary">Take your appointment now!</h5>
+                <!-- <p>Skote Dashboard</p> -->
+              </div>
+            </div>
+            <div class="col-5 align-self-end">
+              <img
+                src="assets/images/profile-img.png"
+                alt=""
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="card-body pt-0">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="avatar-md profile-user-wid mb-4">
+                <img
+                  src="assets/images/users/avatar-1.jpg"
+                  alt=""
+                  class="img-thumbnail rounded-circle"
+                />
+              </div>
+              <h5 class="font-size-15 text-truncate">
+                {{ item.firstName }} {{ item.lastName }}
+              </h5>
+              <p class="text-muted mb-0 text-truncate">
+                {{ item.specialist }}
+              </p>
+            </div>
+
+            <div class="col-sm-8">
+              <div class="pt-4">
+                <div class="row">
+                  <div class="col-6">
+                    <h5 class="font-size-15 text-truncate">
+                      {{ item.experience }} years
+                    </h5>
+                    <p class="text-muted mb-0">Experience</p>
+                  </div>
+                  <div class="col-6">
+                    <h5 class="font-size-15 text-truncate">{{ item.about }}</h5>
+                    <p class="text-muted mb-0">Bio</p>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <a  class="btn btn-primary btn-sm"
+                    >Book Now <i class="mdi mdi-arrow-right ms-1"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end row -->
+  </div>
+</div>

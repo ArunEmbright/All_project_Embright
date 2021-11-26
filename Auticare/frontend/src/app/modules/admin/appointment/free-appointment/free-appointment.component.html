@@ -1,0 +1,73 @@
+<div class="card">
+    <div class="wrapper">
+      <div class="card-header">
+        <div class="input-group input-group-sm" style="width: 150px;">
+          
+  <div class="float-right">
+  <div class="text-center"><h5>Free Appointment</h5></div>
+  </div>
+        </div>
+      </div>
+      <div class="card-body">
+  
+        <table class="table table-bordered ">
+          <thead>
+            <tr>
+              <th>User ID</th>
+              <th>Name</th>
+              
+              <th>Age</th>
+              <th>User Name</th>
+              <th>Relationship with child</th>
+             
+              <th>date</th>
+              <th>Email</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <th>{{user.userId}}</th>
+              <td>
+                {{ user.patientName }}
+              </td>
+              
+              <td>
+                {{ user.age }}
+              </td>
+              <!--<td>
+                    {{ list.firstName }}
+                  </td>-->
+                  <td>
+                    {{ user.firstName }} {{user.lastName}}
+                  </td>
+                  <td>
+                    {{ user.relationType }} 
+                  </td>
+              
+              <td>
+                {{ user.appointmentAt }}
+              </td>
+             
+              <td>
+                {{ user.email}}
+              </td>
+              <!--
+                  <td>
+                    {{ list.designation }}
+                  </td>-->
+  
+              <td>
+                <a class="action-btn" >
+                  <i class="material-icons">edit</i>
+                </a>
+                
+              </td>
+            </tr>
+  
+          </tbody>
+        </table>
+  
+      </div>
+    </div>
+  </div>

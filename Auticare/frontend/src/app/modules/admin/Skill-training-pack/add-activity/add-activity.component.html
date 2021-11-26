@@ -1,0 +1,102 @@
+<div class="container-fluid">
+    <!-- SELECT2 EXAMPLE -->
+    <div class="card card-default">
+      <div class="card-header">
+        <h3 class="card-title font-weight-bold">Auticare Skill Training</h3>
+  
+        <div class="card-tools">
+          <a
+            class="btn"
+            (click)="back()"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Back to menu list"
+            ><i class="fas fa-hand-point-left"></i
+          ></a>
+        </div>
+      </div>
+  
+      <!-- /.card-header -->
+      <div class="card-body">
+        <form [formGroup]="menuForm" (ngSubmit)="save()">
+          <div class="row">
+            <div class="col-md-6">
+              <label for=""
+                >Activity Name<label class="red-text">*</label></label
+              >
+              <div class="input-group mb-2">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="activityName"
+                  name="activityName"
+                  formControlName="activityName"
+                  placeholder="Enter Activity Name"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for=""
+                >Type of Autism<label class="red-text">*</label></label
+              >
+                <select formControlName="relationType" class="form-control"  
+                     id="typeOfAutism" name="typeOfAutism"
+                     formControlName="typeOfAutism" class="form-select"  ngDefaultControl >
+                      <option value="null" disabled="true" [selected]="true">Select Degree of Autism</option>
+                      <option class="dropdown-item" *ngFor="let relation of autismState"> {{ relation }}
+                      </option>
+                     </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for=""
+                >Skill Area<label class="red-text">*</label></label
+              >
+                <select formControlName="relationType" class="form-control"  
+                     id="skillArea" name="skillArea"
+                     formControlName="skillArea" class="form-select"  ngDefaultControl >
+                      <option value="null" disabled="true" [selected]="true">Skill Area</option>
+                      <option class="dropdown-item" *ngFor="let relation of skillType"> {{ relation }}
+                      </option>
+                     </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+            <label for="">Upload Activity<label class="red-text">*</label></label>
+            <div class="input-group mb-6">
+              <input
+                #fileMenu
+                type="file"
+                accept="pdf/*"
+                (change)="fileUpload(fileMenu)"
+                formControlName="video"
+                id="video"
+                name="video"
+              />
+            </div>
+            </div>
+            </div>
+              <!--Using items input-->
+            
+             </div>
+         
+          <span class="d-flex w-100 pl-2 pt-2">
+            <button class="btn btn-dark mr-3">
+              <p>Submit</p>
+            </button>
+  
+            <button class="btn btn-outline-dark" (click)="back()">
+              <p>Cancel</p>
+            </button>
+          </span>
+        </form>
+  
+        <!-- /.row -->
+      </div>
+    </div>
+    <!-- /.card -->
+  </div>
+  
