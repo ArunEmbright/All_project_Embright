@@ -1,0 +1,104 @@
+
+<link rel="stylesheet" href="https://colorlib.com/etc/regform/colorlib-regform-7/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+<link rel="stylesheet" href="https://colorlib.com/etc/regform/colorlib-regform-7/css/style.css">
+
+<div class="main">
+  <div class="signup">
+    <div class="container">
+      <div class="signup-content">
+        <div class="signup-form">
+          <h1 class="form-title">Sign up</h1>
+
+          <div class="form-group">
+
+            <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+            <input #f1Input class="input has-background-light" type="firstName" placeholder="First Name">
+
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="email"><i class="zmdi zmdi-email"></i></label>
+            <input #lnInput class="input has-background-light" type="lastName" placeholder="Last Name">
+
+          </div>
+
+          <div class="form-group">
+            <label for="email"><i class="zmdi zmdi-email"></i></label>
+            <input #TnInput class="input has-background-light" type="teamName" placeholder="Team Name">
+
+          </div>
+          <div class="form-group">
+
+            <label for="email"><i class="zmdi zmdi-email"></i></label>
+            <input #phnInput class="input has-background-light" type="phoneNumber" placeholder="Phone Number">
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="email"><i class="zmdi zmdi-email"></i></label>
+            <input #locnInput class="input has-background-light" type="location" placeholder="Location">
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="email"><i class="zmdi zmdi-email"></i></label>
+            <input #adrInput class="input has-background-light" type="address" placeholder="Address">
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="email"><i class="zmdi zmdi-email"></i></label>
+            <input #emailInput class="input has-background-light" type="email" placeholder="Email">
+
+          </div>
+          <div class="form-group">
+
+            <label for="email"><i class="zmdi zmdi-email"></i></label>
+            <input #pwInput class="input has-background-light" type="password" placeholder="Password">
+
+          </div>
+          <div class="field" style="display: flex; justify-content: flex-end;">
+            <p class="control">
+              <button class="form-submit" (click)="onSignupButtonClicked(
+              f1Input.value, 
+              lnInput.value, 
+              TnInput.value,
+              phnInput.value,
+              locnInput.value, 
+              adrInput.value,
+              emailInput.value, 
+              pwInput.value)">
+                Sign up
+              </button>
+            </p>
+          </div>
+          <br>
+        </div>
+        <div class="signup-image">
+          <figure><img src="https://colorlib.com/etc/regform/colorlib-regform-7/images/signup-image.jpg" alt="sing up image"></figure>
+          <a routerLink="/login" class="signup-image-link">I am already member</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<script src="https://colorlib.com/etc/regform/colorlib-regform-7/vendor/jquery/jquery.min.js"></script>
+  <script src="https://colorlib.com/etc/regform/colorlib-regform-7/js/main.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+  </script>

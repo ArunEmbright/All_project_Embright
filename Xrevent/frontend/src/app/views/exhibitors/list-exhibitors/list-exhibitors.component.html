@@ -1,0 +1,69 @@
+<div class="card">
+    <div class="wrapper">
+      <div class="card-header">
+        <div class="input-group input-group-sm" style="width: 150px;">
+          <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+  
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-default">
+              <i class="fas fa-search"></i>
+            </button>
+  
+          </div>
+  
+        </div>
+      </div>
+      <div class="card-body">
+  
+        <table class="table table-bordered ">
+          <thead>
+            <tr>
+              <th>Events</th>
+              <th>Name</th>
+              <th>Exhibitor</th>
+              <th>startDate</th>
+              <th>endDate</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let list of lists">
+              <td>
+                {{ list.Event }}
+              </td>
+              <!--<td>
+                    {{ list.firstName }}
+                  </td>-->
+              <td>
+                {{ list.firstName}}
+              </td>
+              <td>
+                {{ list.exhibitor }}
+              </td>
+              <td>
+                {{ list.startDate }}
+              </td>
+              <td>
+                {{ list.endDate }}
+              </td>
+              <!--
+                  <td>
+                    {{ list.designation }}
+                  </td>-->
+  
+              <td>
+                <a class="action-btn" [routerLink]="['/exhibitor/edit-exhibitor', list._id]">
+                  <i class="material-icons">edit</i>
+                </a>
+                <a class="action-btn" (click)=deleteExhibitorFn(list)>
+                  <i class="material-icons">delete</i>
+                </a>
+              </td>
+            </tr>
+  
+          </tbody>
+        </table>
+  
+      </div>
+    </div>
+  </div>

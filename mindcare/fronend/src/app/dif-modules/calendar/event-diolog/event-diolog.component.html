@@ -1,0 +1,92 @@
+<div
+    bsModal
+    #modal="bs-modal"
+    class="modal fade pb-8 pt-26 pt-md-8"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="dialog-sizes-name1"
+  >
+    <div class="modal-dialog pb-8 pt-26 pt-md-8">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="dialog-sizes-name1 " class="card-subtitle mb-2">
+            Confirm and Pay
+          </h3>
+          <button
+            type="button"
+            class="close pull-right"
+            (click)="modal.hide()"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="card" >
+          <div class="card-body text-center">
+            <h5 class="card-title">You will definitely find this useful</h5>
+            <br>
+            <h5 class="card-subtitle mb-2 ">After paying, you can book your slot</h5>
+            <br>
+            <h5 class="card-text">Final fee</h5>
+            <h5 class="card-text">₹ 349</h5>
+            <hr>
+            <button class="btn btn-primary btn-lg" (click)="pay()">Proceed to pay</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<form #eventForm="ngForm" (submit)="addEvent(eventForm.form)" class="event-form">
+    <h1>Add Event</h1>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Title</mat-label>
+      <input
+        type="text"
+        name="title"
+        #title="ngModel"
+        [(ngModel)]="eventData.title"
+        placeholder="Enter event title*"
+        required
+        matInput
+      />
+      <mat-error *ngIf="title.invalid && title.touched">
+        Event title can not be blank
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Date</mat-label>
+      <input
+        type="date"
+        name="date"
+        #date="ngModel"
+        [(ngModel)]="eventData.date"
+        required
+        matInput
+      />
+      <mat-error *ngIf="date.invalid && date.touched">
+        Enter a valid date
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Time</mat-label>
+      <input
+        type="time"
+        name="time"
+        #time="ngModel"
+        [(ngModel)]="eventData.time"
+        required
+        matInput
+        min="09:00" 
+        max="18:00" 
+      />
+      <mat-error *ngIf="time.invalid && time.touched">
+        Enter a valid time
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="accent" >Save</button>
+    <button mat-raised-button mat-dialog-close color="primary">Cancel</button>
+  </form>
+  

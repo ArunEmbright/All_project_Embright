@@ -1,0 +1,141 @@
+<app-header
+  [navbarBrandRouterLink]="['']"
+  [fixed]="true"
+  [navbarBrandFull]="{
+    src: 'assets/img/2hUnzH.jpg',
+    width: 1,
+    height: 1,
+    alt: 'mindcare'
+  }"
+  [navbarBrandMinimized]="{
+    src: 'assets/img/2hUnzH.jpg',
+    width: 1,
+    height: 1,
+    alt: 'mindcare'
+  }"
+  [sidebarToggler]="'lg'"
+  [asideMenuToggler]="'lg'"
+>
+  <ul class="nav navbar-nav ml-auto">
+    <li class="nav-item dropdown" dropdown placement="bottom right">
+      <a
+        class="nav-link"
+        data-toggle="dropdown"
+        href="#"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+        dropdownToggle
+        (click)="(false)"
+      >
+        <img
+          *ngFor="let user of users"
+          src="{{ user.avatar || '../assets/img/mindcare logo.png' }}"
+          class="img-avatar"
+          alt="please add profile image"
+        />
+      </a>
+
+      <div
+        class="dropdown-menu dropdown-menu-right"
+        *dropdownMenu
+        aria-labelledby="simple-dropdown"
+      >
+        <div class="dropdown-header text-center"><strong>Account</strong></div>
+
+        <div class="divider"></div>
+
+        <a
+          class="dropdown-item"
+          style="color: black"
+          href="javascript: void(0);"
+          (click)="loggOut()"
+          ><i class="fa fa-lock"></i> Logout</a
+        >
+      </div>
+    </li>
+  </ul>
+</app-header>
+<div class="app-body">
+  <app-sidebar
+    #appSidebar
+    [fixed]="true"
+    [display]="'lg'"
+    [minimized]="sidebarMinimized"
+    (minimizedChange)="toggleMinimize($event)"
+  >
+    <div class="profile-card">
+      <div class="header"></div>
+      <br />
+      <img *ngFor="let user of users" src="{{ user.avatar || '../assets/img/mindcare logo.png'}}" alt="profile" />
+      <br />
+      <p *ngFor="let user of users">{{ user.firstName }}.{{ user.lastName }}</p>
+    </div>
+    <app-sidebar-nav
+      [navItems]="navItems"
+      [perfectScrollbar]
+      [disabled]="appSidebar.minimized"
+    ></app-sidebar-nav>
+    <app-sidebar-minimizer></app-sidebar-minimizer>
+  </app-sidebar>
+  <main class="main">
+    <!-- Breadcrumb -->
+    <!-- breaking change 'cui-breadcrumb' -->
+    <nav aria-label="breadcrumb" class="main-breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a
+            [routerLink]="['/main/dashboard']"
+            routerLinkActive="router-link-active"
+            >Dashboard</a
+          >
+        </li>
+      </ol>
+    </nav>
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <app-aside [fixed]="true" [display]="false" [ngClass]="'test'">
+    <tabset>
+      <tab>
+        <ng-template tabHeading><i class="icon-list"></i></ng-template>
+        <div class="list-group list-group-accent">
+          <div
+            class="
+              list-group-item list-group-item-accent-secondary
+              bg-light
+              text-center
+              font-weight-bold
+              text-muted text-uppercase
+              small
+            "
+          >
+            Refresh all
+          </div>
+          <div
+            class="
+              list-group-item
+              list-group-item-accent-warning
+              list-group-item-divider
+            "
+          >
+            <div class="avatar float-right"></div>
+            <div>
+              <a class="nav-link" href="javascript:void(0)" (click)="loggOut()"
+                ><i class="fa fa-refresh"></i> Refresh</a
+              >
+            </div>
+          </div>
+        </div>
+      </tab>
+    </tabset>
+  </app-aside>
+</div>
+<app-footer>
+  <span><a href="https://Embright">Mindcare</a> &copy; 2021 Embright.</span>
+  <span class="ml-auto"
+    >Powered by <a href="https://www.embrightinfotech.com">Embright</a></span
+  >
+</app-footer>

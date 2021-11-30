@@ -1,0 +1,73 @@
+<div class="col-md-9">
+  <div class="card">
+    <div class="card-header p-2">
+      <ul class="nav nav-pills">
+        <h1></h1>
+      </ul>
+    </div><!-- /.card-header -->
+    <div class="card-body">
+      <div class="card card-primary">
+        <div class="card-header">
+          <h3 class="card-title">Update Speaker</h3>
+        </div>
+        <!-- /.card-header -->
+
+
+<div [formGroup]="editForm">
+<div class="card-body">
+    <div class="centered-content">
+      <div class="modal-box">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <input #listTitleInput name="title" [(ngModel)]="speakerItem.title" formControlName="title" class="form-control" type="title" placeholder="Enter title name...">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <input #fnInput name="title" [(ngModel)]="speakerItem.firstName" formControlName="firstName" class="form-control" type="firstName"
+              placeholder="First Name">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+
+              <input #phnInput name="title" [(ngModel)]="speakerItem.phoneNumber" formControlName="phoneNumber" class="form-control" type="phoneNumber"
+              placeholder="Phone Number">
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <input #cmInput name="title" [(ngModel)]="speakerItem.company" formControlName="company" class="form-control" type="company" placeholder="Company">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <input #dsInput name="title" [(ngModel)]="speakerItem.designation" formControlName="designation" class="form-control" type="designation"
+              placeholder="designation">
+            </div>
+          </div>
+        </div>
+      </div>
+        <br><br>
+        <div class="footer">
+          <button class="btn btn-primary"  (click)="updateList
+        (
+            listTitleInput.value,
+            fnInput.value,
+            phnInput.value,
+            cmInput.value,
+            dsInput.value
+        )">
+        Edit Speaker
+          </button>
+        </div>
+
+    
+      </div>
+    </div>
+    <!-- /.card-body -->
+  </div>

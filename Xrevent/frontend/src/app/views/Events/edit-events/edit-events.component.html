@@ -1,0 +1,94 @@
+<div class="col-md-9">
+  <div class="card">
+    <div class="card-header p-2">
+      <ul class="nav nav-pills">
+        <h1></h1>
+      </ul>
+    </div><!-- /.card-header -->
+    <div class="card-body">
+      <div class="card card-primary">
+        <div class="card-header">
+          <h3 class="card-title">Update Event</h3>
+        </div>
+        <!-- /.card-header -->
+
+
+        <div [formGroup]="editForm">
+          <div class="card-body">
+            <div class="centered-content">
+              <div class="modal-box">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <input #ExInput name="title" [(ngModel)]="eventItem.exhibitor" formControlName="exhibitor"
+                        class="form-control" type="exhibitor">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <input #OrgInput name="title" [(ngModel)]="eventItem.organizer" formControlName="organizer"
+                        class="form-control" type="organizer" placeholder="First Name">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+
+                      <input #EveInput name="title" [(ngModel)]="eventItem.eventName" formControlName="eventName"
+                        class="form-control" type="eventName" placeholder="Phone Number">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <input #LnInput name="title" [(ngModel)]="eventItem.location" formControlName="location"
+                        class="form-control" type="location">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>Start Date </label>
+                      <mat-form-field>
+                        <input #SdInput matInput [matDatepicker]="picker" [(ngModel)]="eventItem.startDate"
+                          formControlName="startDate" type="startDate" class="form-control">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>End Date</label>
+                      <mat-form-field>
+                        <input #EdInput name="endDate" matInput [matDatepicker]="picker2"
+                          [(ngModel)]="eventItem.endDate" formControlName="endDate" class="form-control">
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <br><br>
+              <div class="footer">
+                <button class="btn btn-primary" (click)="updateList
+          (
+            ExInput.value,
+            OrgInput.value,
+            EveInput.value,
+            SdInput.value,
+            EdInput.value,
+            LnInput.value
+          )">
+                  Edit Event
+                </button>
+              </div>
+
+
+            </div>
+          </div>
+          <!-- /.card-body -->
+        </div>

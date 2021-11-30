@@ -1,0 +1,64 @@
+<div class="card">
+    <div class="wrapper">
+      <div class="card-header">
+        <div class="input-group input-group-sm" style="width: 150px;">
+          <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+  
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-default">
+              <i class="fas fa-search"></i>
+            </button>
+  
+          </div>
+  
+        </div>
+      </div>
+      <div class="card-body">
+  
+        <table class="table table-bordered ">
+          <thead>
+            <tr>
+              <th>Exhibitor</th>
+              <th>Name</th>
+              <th> Description</th>
+             
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let list of lists">
+              
+              <!--<td>
+                    {{ list.productName }}
+                  </td>-->
+              
+              <td>
+                {{ list.exhibitor }}
+              </td>
+              <td>
+                {{ list.productName }}
+              </td>
+              <td>
+                {{ list.description }}
+              </td>
+              <!--
+                  <td>
+                    {{ list.designation }}
+                  </td>-->
+  
+              <td>
+                <a class="action-btn" [routerLink]="['/products/edit-product', list._id]">
+                  <i class="material-icons">edit</i>
+                </a>
+                <a class="action-btn" (click)=deleteProductFn(list)>
+                  <i class="material-icons">delete</i>
+                </a>
+              </td>
+            </tr>
+  
+          </tbody>
+        </table>
+  
+      </div>
+    </div>
+  </div>

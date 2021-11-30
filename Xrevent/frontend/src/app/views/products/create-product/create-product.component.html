@@ -1,0 +1,194 @@
+<div class="animated fadeIn">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- /.col -->
+                <div class="col-md-9">
+                    <div class="card">
+                        <div class="card-header p-2">
+                            <ul class="nav nav-pills">
+                                <h1></h1>
+                            </ul>
+                        </div><!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title"></h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <div [formGroup]="editForm">
+
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <!-- text input -->
+                                                <div class="form-group">
+                                                    <label>Exhibitor</label>
+                                                    <input #ExInput type="text"  formControlName="exhibitor" class="form-control"
+                                                        placeholder="Enter ...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-sm-12">
+                                                <!-- textarea -->
+                                                <div class="form-group">
+                                                    <label> Name </label>
+                                                    <input #PnInput type="text" formControlName="productName" class="form-control"
+                                                        placeholder="Enter ...">
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <!-- textarea -->
+                                                <div class="form-group">
+                                                    <label>Pick any two Tags</label>
+                                                    <input #TgInput type="text" formControlName="pickTags" class="form-control"
+                                                        placeholder="Enter ...">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <!-- textarea -->
+                                                <div class="form-group">
+                                                    <label>Location</label>
+                                                    <input #LnInput type="text" formControlName="location" class="form-control"
+                                                        placeholder="Enter ...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Description:</label>
+                                            <angular-editor #DnInput rows="32" name="description"  formControlName="description" [config]="editorConfig"
+                                                placeholder="'Enter text here...'">
+                                            </angular-editor>
+                                            <div class="error">description is required(Max 400 - Min 5).</div>
+                                        </div>
+                                        <div class="container">
+
+                                            <br>
+                                            <div class="footer">
+                                                <button type="submit" class="btn btn-primary"
+                                                [routerLink]="['/products/list-product']" (click)="createList( 
+                                                    ExInput.value,
+                                                    PnInput.value,
+                                                    TgInput.value,
+                                                    LnInput.value,
+                                                    DnInput.value
+                                                )">Create Product</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.tab-content -->
+                        </div><!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+                <div class="col-md-3">
+
+                    <!-- Profile Image -->
+                    <div class="card card-primary card-outline">
+                        <div class="card-body box-profile">
+                            <div class="text-center">
+                                <p class="text-muted text-center">Upload Product Image </p>
+                                <!-- <img *ngFor="let profile of profiles" class="profile-user-img img-fluid img-circle"
+                                    [src]="profile.imagePath" alt="User profile picture" /> -->
+
+
+                            </div>
+                            <form >
+                                <div></div><br>
+                                <div>
+                                    <label class="custom-file-upload ">
+                                        <input  type="file" />
+
+
+                                        <a class="col-md-4" ><i class="fa fa-trash fa-lg"></i> </a>
+                                    </label>
+
+                                    <!-- <input (change)="onFileSelect($event)" type="file" />-->
+
+                                </div>
+
+
+                                <!-- <div *ngIf="imageData">
+                                    <img class="profile-user-img img-fluid img-circle" [src]="imageData"
+                                        [alt]="form.value.name" />
+                                </div> -->
+                                <div>
+                                    <button class="btn btn-primary btn-block" type="submit">Update Image</button>
+                                </div>
+                            </form>
+
+
+                        </div>
+
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+
+
+
+                    <!-- About Me Box -->
+
+                    <!-- /.card -->
+                    <div class="card card-primary card-outline">
+                        <div class="card-body box-profile">
+                            <form >
+                                <!-- Profile Image -->
+
+                                <div class="text-center">
+                                    <p class="text-muted text-center">Upload brochure </p>
+                                    <!-- <embed *ngFor="let profile of profiles"
+                                        class="profile-user-img img-fluid img-circle" [src]="profile.imagePath" /> -->
+                                </div>
+
+                                <div></div><br>
+                                <div>
+                                    <label class="custom-file-upload ">
+                                        <input type="file" />
+
+
+                                        <a class="col-md-5"><i class="fa fa-upload fa-lg"></i> </a>
+                                    </label>
+
+                                    <!-- <input (change)="onFileSelect($event)" type="file" />-->
+
+                                </div>
+
+
+                                <!-- <div *ngIf="imageData">
+
+                                </div> -->
+                                <div>
+                                    <button class="btn btn-primary btn-block" type="submit">Update brochure</button>
+                                </div>
+
+
+
+                                <!-- /.card -->
+
+
+
+                                <!-- About Me Box -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+</div>

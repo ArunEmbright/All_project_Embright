@@ -1,0 +1,162 @@
+<div class="container">
+    <div class="img">
+        <img src="../../../assets/img/Mindcare.jpg">
+    </div>
+    <div class="login-content wrapper">
+        <div class="cell" *ngIf="isLoading">
+            <div class="pl pl-butterfly"></div>
+            <div class="pl-name">loading</div>
+          </div>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
+            <img src="../../../assets/img/mindcare logo.png">
+            <h2 class="title"></h2>
+            <div class="input-div one">
+                <div class="i">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="div">
+           		   		<input type="text" formControlName="firstName" class="input" placeholder="First name"
+                        [ngClass]="{'is-invalid': submitted && f.firstName.errors}"
+                        >
+                        <br>
+                        <br>
+                        <div *ngIf="submitted && f.firstName.errors" class="alert ">
+                            <div *ngIf="f.firstName.errors.required">
+                                First Name is required
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+            <div class="input-div pass">
+                <div class="i">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="div">
+                    
+                    <input type="text" formControlName="lastName" class="input" placeholder="Last Name" 
+                    [ngClass]="{'is-invalid': submitted && f.lastName.errors}"
+                    >
+                    <br>
+                    <br>
+                    <div *ngIf="submitted && f.lastName.errors" class="alert">
+                        <div *ngIf="f.lastName.errors.required">
+                            Last name is requiered
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="input-div pass">
+                <div class="i">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="div">
+                    <input type="text" class="input" formControlName="email" placeholder="Email" 
+                    [ngClass]="{'is-invalid': submitted && f.email.errors}"
+                    >
+                    <br>
+                    <br>
+                    <div *ngIf="submitted && f.email.errors" class="alert">
+                        <div *ngIf="f.email.errors.required">
+                            Email is required
+                        </div>
+                        <div *ngIf="f.email.errors.pattern">
+                            not a valid mail
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="input-div pass">
+                <div class="i">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="div">
+                    <input type="date"  class="input" formControlName="dob" placeholder="Date of Birth"
+                    [ngClass]="{'is-invalid': submitted && f.dob.errors}">
+                    <br>
+                    <br>
+                    <div *ngIf="submitted && f.dob.errors" class="alert">
+                        <div *ngIf="f.dob.errors.required">
+                            Date of birth is required
+                        </div>
+                       
+
+                    </div>
+            
+                </div>
+               </div>
+               <div class="input-div pass">
+                <div class="i">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="div">
+                    <input type="number"  class="input" formControlName="phoneNumber" placeholder="Phone number"
+                    [ngClass]="{'is-invalid': submitted && f.phoneNumber.errors}">
+                    <br>
+                    <br>
+                    <div *ngIf="submitted && f.phoneNumber.errors" class="alert">
+                        <div *ngIf="f.dob.errors.required">
+                            Phone number is required
+                        </div>
+                       
+
+                    </div>
+            
+                </div>
+               </div>
+            <div class="input-div pass">
+                <div class="i">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="div">
+                    <input type="password" formControlName="password" class="input" placeholder="Password"
+                    [ngClass]="{'is-invalid': submitted && f.password.errors}"
+                    >
+                    <br>
+                    <br>
+                    <div *ngIf="submitted && f.password.errors" class="alert">
+                    <div *ngIf="f.password.errors.required">
+                        Password is required 
+                    </div>
+                    <div *ngIf="f.password.errors.minlength">
+                        Password minimum length is 6
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="input-div pass">
+                <div class="i">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="div">
+                    <input type="password" formControlName="confirmPassword" class="input" placeholder="Confirm Password"
+                    [ngClass]="{'is-invalid': submitted && f.confirmPassword.errors}"
+                    >
+                    <br>
+                    <br>
+                    <div *ngIf="submitted && f.confirmPassword.errors" class="alert">
+                        <div *ngIf="f.confirmPassword.errors.required">
+                        Confirm Password is required
+                        </div>
+                        <div *ngIf="f.confirmPassword.errors.mustMatch">
+                        Your password is doesn't match
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <a [routerLink]="['/mindcare/auth/login']" routerLinkActive="router-link-active" >Already have account Login</a>
+            
+            <input type="submit" *ngIf="!isLoading" class="btn" value="Register" >
+        </form>
+    </div>
+</div>

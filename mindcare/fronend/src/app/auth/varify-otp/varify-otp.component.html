@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="img">
+        <img src="../../../assets/img/bg.svg">
+    </div>
+    <div class="login-content wrapper">
+        <form  #form='ngForm' (ngSubmit)="VerifyOtp()">
+            <img src="../../../assets/img/avatar.svg">
+            <h1 class="title">OTP varification</h1>
+
+            <div class="input-div one">
+                <div class="i">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="div">
+                    <input [disabled]="true" type="text"  class="input" placeholder="Email"
+                    [(ngModel)]="email" name="email"
+                   >
+                    <br>
+                    <br>
+                    
+                </div>
+            </div>
+            <div class="input-div one">
+                <div class="i">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="div">
+                    <input type="password" class="input" placeholder="OTP"
+                    name="otp" [(ngModel)]="otp"
+                    >
+                    <br>
+                    <br>
+      
+                </div>
+                
+            </div>
+            
+            <input type="submit" class="btn" value="Change password">
+            <!-- <div  *ngIf="error">
+                <div class="alert">{{error}}</div>
+                
+            </div> -->
+        </form>
+        
+    </div>
+</div>

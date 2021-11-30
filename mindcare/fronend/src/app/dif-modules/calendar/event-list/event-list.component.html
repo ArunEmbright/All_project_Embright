@@ -1,0 +1,67 @@
+<div class="content-wrapper">
+    <mat-card class="today-card" >
+        <mat-card-header>
+          <div mat-card-avatar></div>
+          <mat-card-title>Present events</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          
+          <p *ngIf="presentEvents.length===0">No events for today!</p>
+          <mat-card class="event-card" *ngFor="let event of presentEvents">
+            <mat-form-field class="full-width">
+              <mat-label>Time</mat-label>
+              <input disabled type="time" matInput value="{{ event.time }}" />
+            </mat-form-field>
+            <mat-card-title>{{ event.title }}</mat-card-title>
+          </mat-card>
+        </mat-card-content>
+      </mat-card>
+    <br>
+    <br>
+      <mat-card class="card">
+        <mat-card-header>
+          <div mat-card-avatar></div>
+          <mat-card-title>Past Events</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          
+          <mat-card class="event-card" *ngFor="let date of pastEvents | keyValueUnsorted trackBy: trackByIndex">
+            <mat-form-field class="full-width">
+              <mat-label>Date</mat-label>
+              <input disabled type="date" matInput value="{{ date.key }}" />
+            </mat-form-field>
+            <mat-card-content *ngFor="let event of date.value">
+              <mat-form-field class="full-width">
+                <mat-label>Time</mat-label>
+                <input disabled type="time" matInput value="{{ event.time }}" />
+              </mat-form-field>
+              <mat-card-title>{{ event.title }}</mat-card-title>
+              
+            </mat-card-content>
+          </mat-card>
+        </mat-card-content>
+        </mat-card>
+       
+        <mat-card class="card">
+          <mat-card-header>
+            <div mat-card-avatar></div>
+            <mat-card-title>Future Events</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-card class="event-card" *ngFor="let date of futureEvents | keyValueUnsorted trackBy: trackByIndex">
+              <mat-form-field class="full-width">
+                <mat-label>Date</mat-label>
+                <input disabled type="date" matInput value="{{ date.key }}" />
+              </mat-form-field>
+              <mat-card-content *ngFor="let event of date.value">
+                <mat-form-field class="full-width">
+                  <mat-label>Time</mat-label>
+                  <input disabled type="time" matInput value="{{ event.time }}" />
+                </mat-form-field>
+                <mat-card-title>{{ event.title }}</mat-card-title>
+                
+              </mat-card-content>
+            </mat-card>
+          </mat-card-content>
+        </mat-card>
+</div>

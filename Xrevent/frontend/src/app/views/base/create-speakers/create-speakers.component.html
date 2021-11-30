@@ -1,0 +1,127 @@
+<div class="animated fadeIn">
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+
+          <!-- Profile Image -->
+          <div class="card card-primary card-outline">
+            <div class="card-body box-profile">
+              <div class="text-center">
+                <p class="text-muted text-center">Profile Photo</p>
+
+              </div>
+
+              <form [formGroup]="addForm" (submit)="onImageSubmit()">
+                <div> </div>   <div>
+                  <label class="custom-file-upload ">
+                    <input (change)="onFileSelect($event)" type="file" />
+                    <a class="col-md-4" (click)="onDelete()"><i class="fa fa-plus fa-lg"></i> </a>
+
+                  </label>
+
+ 
+
+                </div> 
+
+
+                <div *ngIf="imageData">
+                  <img class="profile-user-img img-fluid img-circle" [src]="imageData" [alt]="addForm.value.name" />
+                </div>
+
+
+                <div>
+                  <button class="btn btn-primary btn-block" type="submit">Add Photo</button>
+                </div>
+
+              </form>
+
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+          <!-- About Me Box -->
+
+          <!-- /.card -->
+
+
+        </div>
+        <div class="col-md-9">
+          <div class="card">
+            <div class="card-header p-2">
+              <ul class="nav nav-pills">
+                <h1></h1>
+              </ul>
+            </div><!-- /.card-header -->
+            <div class="card-body">
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">Speaker</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="centered-content">
+                    <div class="modal-box">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <input #listTitleInput class="form-control" type="title" placeholder="Enter title name...">
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <input #fnInput class="form-control" type="firstName" placeholder="First Name">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+
+                            <input #phnInput class="form-control" type="phoneNumber" placeholder="Phone Number">
+                          </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <input #cmInput class="form-control" type="company" placeholder="Company">
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <input #dsInput class="form-control" type="designation" placeholder="designation">
+                          </div>
+                        </div>
+                      </div>
+
+                      <br><br>
+                      <div class="footer">
+                        <button class="btn btn-primary" [routerLink]="['/speaker/list-speaker']" (click)="createList
+                      (
+                          listTitleInput.value,
+                          fnInput.value,
+                          phnInput.value,
+                          cmInput.value,
+                          dsInput.value
+                      )">
+                          Create Speaker
+                        </button>
+                      </div>
+
+
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+                <!-- /.tab-content -->
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>

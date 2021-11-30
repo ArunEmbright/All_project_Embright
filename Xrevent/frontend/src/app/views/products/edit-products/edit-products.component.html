@@ -1,0 +1,83 @@
+<div class="col-md-9">
+    <div class="card">
+      <div class="card-header p-2">
+        <ul class="nav nav-pills">
+          <h1></h1>
+        </ul>
+      </div><!-- /.card-header -->
+      <div class="card-body">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">Update Products</h3>
+          </div>
+          <!-- /.card-header -->
+  
+  
+          <div [formGroup]="editForm">
+           
+              <div class="centered-content">
+                <div class="modal-box">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input #ExInput name="title" [(ngModel)]="productItem.exhibitor" formControlName="exhibitor"
+                          class="form-control" type="events">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input #PnInput name="title" [(ngModel)]="productItem.productName" formControlName="productName"
+                          class="form-control" type="companyName">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+  
+                        <input #TgInput name="title" [(ngModel)]="productItem.pickTags" formControlName="pickTags"
+                          class="form-control" type="firstName" placeholder="Phone Number">
+                      </div>
+                    </div>
+  
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input #LnInput name="title" [(ngModel)]="productItem.location" formControlName="location"
+                          class="form-control" type="lastName" placeholder="Company">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="email">Description:</label>
+                    <angular-editor #DnInput rows="32"  name="description" formControlName="description"
+                        placeholder="'Enter text here...'">
+                    </angular-editor>
+                    <div class="error">description is required(Max 400 - Min 5).</div>
+                </div>
+                <div class="container">
+                  </div>
+                  </div>
+                
+                </div>
+              </div>
+              <br><br>
+              <div class="footer">
+                <button class="btn btn-primary" (click)="updateList
+            (
+                ExInput.value,
+                PnInput.value,
+                TgInput.value,
+                LnInput.value,
+                DnInput.value
+            )">
+                  Edit Product
+                </button>
+              </div>
+  
+  
+            </div>
+          </div>
+          <!-- /.card-body -->
+        </div>

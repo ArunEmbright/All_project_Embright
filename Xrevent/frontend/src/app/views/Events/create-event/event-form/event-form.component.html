@@ -1,0 +1,106 @@
+<div class="row">
+    <div class="col-sm-6">
+
+        <div class="form-group">
+            <label>Exhibitor</label>
+            <input #ExInput type="text" name="exhibitor"  class="form-control" placeholder="Enter ..." >
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+
+        <div class="form-group">
+            <label>Organizer</label>
+            <input #OrgInput type="text" name="organizer"  class="form-control" placeholder="Enter ..." >
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+
+        <div class="form-group">
+            <label>Event Name </label>
+            <input #EveInput type="text" name="eventName"  class="form-control" placeholder="Enter ..." >
+        </div>
+    </div>
+    <div class="col-sm-6">
+
+        <div class="form-group">
+            <label>Start Date </label>
+            <mat-form-field>
+                <input #SdInput name="startDate"  matInput [matDatepicker]="picker" placeholder="Choose a date"
+                    >
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+            <label>End Date</label>
+            <mat-form-field>
+                <input #EdInput name="endDate"  matInput [matDatepicker]="picker2" placeholder="Choose a date"
+                    >
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </div>
+
+
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <!-- textarea -->
+        <div class="form-group">
+            <label>Location</label>
+            <input #LnInput type="text" name="location"  class="form-control" placeholder="Enter ..." >
+        </div>
+    </div>
+</div>
+<!--<div class="container" >
+                        <form >
+                    <div class="form-group">
+                            <label for="email">Description:</label>
+                            <angular-editor rows="32" placeholder="'Enter text here...'" ></angular-editor>
+                            <div class="error">description is (Max 400 - Min 5).</div>
+                        </div>
+                        
+                        
+                        </form>
+                    </div>-->
+<!-- input states -->
+<!--<div class="form-group">
+                    <label class="col-form-label" for="inputSuccess"><i class="fas fa-check"></i>
+                        Input with
+                        success</label>
+                    <input type="text" class="form-control is-valid" id="inputSuccess"
+                        placeholder="Enter ...">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="inputWarning"><i class="far fa-bell"></i>
+                        Input with
+                        warning</label>
+                    <input type="text" class="form-control is-warning" id="inputWarning"
+                        placeholder="Enter ...">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="inputError"><i
+                            class="far fa-times-circle"></i> Input with
+                        error</label>
+                    <input type="text" class="form-control is-invalid" id="inputError"
+                        placeholder="Enter ...">
+                </div>-->
+
+<div class="footer">
+    <button type="submit" [routerLink]="['/events/list-events']" class="btn btn-primary" (click)="createList
+        (
+            ExInput.value,
+            OrgInput.value,
+            EveInput.value,
+            SdInput.value,
+            EdInput.value,
+            LnInput.value
+        )">Create Event</button>
+</div>

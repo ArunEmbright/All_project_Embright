@@ -1,0 +1,88 @@
+<div class="col-md-9">
+    <div class="card">
+        <div class="card-header p-2">
+            <ul class="nav nav-pills">
+                <h1></h1>
+            </ul>
+        </div><!-- /.card-header -->
+        <div class="card-body">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Update Team</h3>
+                </div>
+                <!-- /.card-header -->
+
+
+                <div [formGroup]="editForm">
+                    <div class="card-body">
+                        <div class="centered-content">
+                            <div class="modal-box">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input #ErInput name="title" [(ngModel)]="teamItem.exhibitor"
+                                                formControlName="exhibitor" class="form-control" type="exhibitor">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input #FnInput name="title" [(ngModel)]="teamItem.firstName"
+                                                formControlName="firstName" class="form-control" type="organizer"
+                                                placeholder="First Name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+
+                                            <input #LnInput name="title" [(ngModel)]="teamItem.lastName"
+                                                formControlName="lastName" class="form-control" type="eventName"
+                                                >
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input #EmInput name="title" [(ngModel)]="teamItem.email"
+                                                formControlName="email" class="form-control" type="location">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+
+                                            <input #PnInput name="title" [(ngModel)]="teamItem.phoneNumber"
+                                                formControlName="phoneNumber" class="form-control" type="eventName"
+                                                placeholder="Phone Number">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input #DnInput name="title" [(ngModel)]="teamItem.designation"
+                                                formControlName="designation" class="form-control" type="location">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <br><br>
+                            <div class="footer">
+                                <button class="btn btn-primary" (click)="updateList
+            (
+                ErInput.value,
+                FnInput.value,
+                LnInput.value,
+                EmInput.value,
+                PnInput.value,
+                DnInput.value
+            )">
+                                    Edit Team
+                                </button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>

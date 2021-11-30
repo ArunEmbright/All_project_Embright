@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="img">
+    <img src="../../../assets/img/Mindcare.jpg" width="200" />
+  </div>
+  <div class="login-content wrapper">
+    <div class="cell" *ngIf="isLoading">
+      <div class="pl pl-butterfly"></div>
+      <div class="pl-name">loading</div>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
+      <img src="../../../assets/img/mindcare logo.png" />
+      <h2 class="title"></h2>
+
+      <div class="input-div one">
+        <div class="i">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="div">
+          <input
+            type="text"
+            formControlName="email"
+            class="input"
+            placeholder="Email"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+          />
+          <br />
+          <br />
+          <div *ngIf="submitted && f.email.errors" class="alert">
+            <div *ngIf="f.email.errors.required">Email is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="input-div one">
+        <div class="i">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="div">
+          <input
+            type="password"
+            class="input"
+            formControlName="password"
+            placeholder="Password"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+          />
+          <br />
+          <br />
+          <div *ngIf="submitted && f.password.errors" class="alert">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.minlength">
+              Minimum length of password is 6
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="alert" *ngIf="error">
+                {{error}}
+            </div> -->
+
+      <a
+        [routerLink]="['/mindcare/auth/forgot-password']"
+        routerLinkActive="router-link-active"
+        >Forgot password</a
+      >
+
+      <input type="submit" *ngIf="!isLoading" class="btn" value="Login" />
+
+      <a
+        [routerLink]="['/mindcare/auth/register']"
+        routerLinkActive="router-link-active"
+        >New registration</a
+      >
+    </form>
+  </div>
+</div>

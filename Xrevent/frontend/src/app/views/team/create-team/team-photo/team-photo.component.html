@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="card-body box-profile">
+        <div class="text-center">
+            <div *ngIf="profiles.length > 0">
+                <div *ngFor="let profile of profiles" class="profile">
+                  <img class="profile-user-img img-fluid img-circle" [src]="profile.imagePath" [alt]="profile.name" />
+                  <div>
+          
+                  </div>
+                </div>
+              </div>
+        </div>
+        <form [formGroup]="form" (submit)="onSubmit()">
+            <div>
+            </div>
+            <br>
+            <div>
+                <label class="custom-file-upload ">
+                    
+                    <input (change)="onFileSelect($event)"  type="file" />
+                    
+    
+                    <a class="col-md-4" (click)="onDelete()"><i class="fa fa-trash fa-lg"></i> </a>
+                </label>
+    
+                <!-- <input (change)="onFileSelect($event)" type="file" />-->
+    
+            </div>
+    
+    
+            <div *ngIf="imageData">
+                <img class="profile-user-img img-fluid img-circle" [src]="imageData"
+                    [alt]="form.value.name" />
+            </div>
+            <div>
+                <button class="btn btn-primary btn-block" type="submit">Create </button>
+            </div>
+        </form>
+    </div>
+    
+    </div>

@@ -1,0 +1,124 @@
+<div class="col-md-9">
+  <div class="card">
+    <div class="card-header p-2">
+      <ul class="nav nav-pills">
+        <h1></h1>
+      </ul>
+    </div><!-- /.card-header -->
+    <div class="card-body">
+      <div class="card card-primary">
+        <div class="card-header">
+          <h3 class="card-title">Update Exhibitor</h3>
+        </div>
+        <!-- /.card-header -->
+
+
+        <div [formGroup]="editForm">
+          <div class="card-body">
+            <div class="centered-content">
+              <div class="modal-box">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <input #EnInput name="title" [(ngModel)]="exhibitorItem.events" formControlName="events"
+                        class="form-control" type="events">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <input #CnInput name="title" [(ngModel)]="exhibitorItem.companyName" formControlName="companyName"
+                        class="form-control" type="companyName">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+
+                      <input #FnInput name="title" [(ngModel)]="exhibitorItem.firstName" formControlName="firstName"
+                        class="form-control" type="firstName" >
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <input #LnInput name="title" [(ngModel)]="exhibitorItem.lastName" formControlName="lastName"
+                        class="form-control" type="lastName" >
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+
+                    <div class="form-group">
+                      <label>Start Date </label>
+                      <mat-form-field>
+                        <input name="startDate" #StDate [(ngModel)]="exhibitorItem.startDate" matInput type="startDate"
+                          formControlName="startDate" [matDatepicker]="picker"  required>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>End Date</label>
+                        <mat-form-field>
+                          <input name="endDate" #EdDate [(ngModel)]="exhibitorItem.endDate" matInput type="endDate"
+                            formControlName="endDate" [matDatepicker]="picker2"  required>
+                          <mat-datepicker-toggle matSuffix [for]="picker2">
+                          </mat-datepicker-toggle>
+                          <mat-datepicker #picker2></mat-datepicker>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+
+                      <input #EtInput name="title" [(ngModel)]="exhibitorItem.exhibitorTags" formControlName="exhibitorTags"
+                        class="form-control" type="exhibitorTags" >
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <input #EmInput name="title" [(ngModel)]="exhibitorItem.email" formControlName="email"
+                        class="form-control" type="email" >
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <input #PnInput name="title" [(ngModel)]="exhibitorItem.phoneNumber" formControlName="phoneNumber"
+                        class="form-control" type="phoneNumber" >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br><br>
+            <div class="footer">
+              <button class="btn btn-primary" (click)="updateList
+          (
+            EnInput.value,
+            FnInput.value,
+            LnInput.value,
+            EtInput.value,
+            StDate.value,
+            EdDate.value,
+            CnInput.value,
+            EmInput.value,
+            PnInput.value
+          )">
+                Edit Exhibitor
+              </button>
+            </div>
+
+
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
